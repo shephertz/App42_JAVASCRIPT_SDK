@@ -3,7 +3,7 @@ App42_JAVASCRIPT_SDK
 
 App42 Cloud API Client SDK JAR files for JavaScript
 
-- [Download] (http://github.com/) the latest App42 Java Script SDK
+- [Download] (https://github.com/shephertz/App42_JAVASCRIPT_SDK/raw/master/1.1/app42_javaScript_1.1.zip) the latest App42 Java Script SDK
 - Unzip the file and copy App42-all-x.x.x.min.js to your project  source.
 - Add the following script tag in the your html page
 script type="text/javascript" src="App42-all-x.x.x.min.js"
