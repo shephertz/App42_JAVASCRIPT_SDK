@@ -12,7 +12,7 @@ App42.initialize("API KEY","SECRET KEY");
 - Instantiate the service that one wants to use in the App, e.g. using User service one has to do the following
 var user = new App42User();
 - Now one can call associated method of that service e.g. user creation can be done with the following snippet
-```code
+```javascript
 user.createUser(userName, pwd, email,{
 success: function(object) {
 // Callback for Success },
