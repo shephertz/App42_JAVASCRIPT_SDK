@@ -8,9 +8,17 @@ App42 Cloud API Client SDK JAR files for JavaScript
 - Add the following script tag in the your html page
 script type="text/javascript" src="App42-all-x.x.x.min.js"
 - Initialize the library using
+ 
+```javascript
 App42.initialize("API KEY","SECRET KEY");
+```
+
 - Instantiate the service that one wants to use in the App, e.g. using User service one has to do the following
+
+```javascript
 var user = new App42User();
+```
+
 - Now one can call associated method of that service e.g. user creation can be done with the following snippet
 
 ```javascript
