@@ -44,7 +44,7 @@ Dr Alexander J Turner
 
 [CopyRight] (http://nerds-central.blogspot.com/2007/01/fast-scalable-javascript-and-vbscript.html) Dr Alexander J Turner - all rights reserved.
 
-Please feel free to use this any way you want as long as you
+- Please feel free to use this any way you want as long as you
 mention I wrote it!
 
 Brian Turek
@@ -53,8 +53,8 @@ Brian Turek
 A JavaScript implementation of the SHA family of hashes, as defined in FIPS
 PUB 180-2 as well as the corresponding HMAC implementation as defined in
 FIPS PUB 198a.
-Version 1.3 Copyright Brian Turek 2008-2010
-Distributed under the BSD License
-[See] (http://jssha.sourceforge.net/) for more information
 
-Several functions taken from Paul Johnson
+- Version 1.3 Copyright Brian Turek 2008-2010
+- Distributed under the BSD License
+- [See] (http://jssha.sourceforge.net/) for more information
+- Several functions taken from Paul Johnson
