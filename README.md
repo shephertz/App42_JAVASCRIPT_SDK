@@ -34,3 +34,27 @@ error: function(error) {
 - You can login to AppHQ console and can see the created user there.
 - You can also use your UserSample.HTML/StorageSample.HTML shipped with distribution for more details.
 - Similarly one can use other App42 services like File Upload, Gaming, NoSQL Storage to make user engaging social Apps for HTML5.
+
+
+Third Party binaries and respective licenses used in App42 SDK are listed below
+
+Dr Alexander J Turner
+----------------------
+
+
+[CopyRight] (http://nerds-central.blogspot.com/2007/01/fast-scalable-javascript-and-vbscript.html) Dr Alexander J Turner - all rights reserved.
+
+Please feel free to use this any way you want as long as you
+mention I wrote it!
+
+Brian Turek
+------------
+
+A JavaScript implementation of the SHA family of hashes, as defined in FIPS
+PUB 180-2 as well as the corresponding HMAC implementation as defined in
+FIPS PUB 198a.
+Version 1.3 Copyright Brian Turek 2008-2010
+Distributed under the BSD License
+[See] (http://jssha.sourceforge.net/) for more information
+
+Several functions taken from Paul Johnson
