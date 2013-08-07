@@ -24,7 +24,7 @@ var user = new App42User();
 ```javascript
 user.createUser(userName, pwd, email,{
 success: function(object) {
-// Callback for Success },
+// Callback for Success }, 
 error: function(error) {
     // Callback for error }
 });
