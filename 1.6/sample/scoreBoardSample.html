@@ -6,10 +6,11 @@
         <link href="../css/create_user_style.css" rel="stylesheet" type="text/css" />
 		 <link href="../css/jqueryAlert.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-        <script type="text/javascript" src="../App42-all-1.5.min.js"></script>
+        <script type="text/javascript" src="../App42-all-1.6.min.js"></script>
         <script type="text/javascript" src="../jqueryAlert.js"></script>
         <script>
-		App42.initialize("YOUR_API_KEY","YOUR_SECRET_KEY");
+	    App42.initialize("48daba56472c1861f06a3657100d4bc8f375f48cb5022d90690232db0b874394","0c245a5166d0312842a71c2a7484ba6a53ef3b8fe20698259f4232ebf5af0a82");
+            App42.setBaseUrl("http://localhost:8082/App42_API_SERVER/cloud/1.0/");
 		
 		function saveUserScore(){
                var game  = new App42Game();
