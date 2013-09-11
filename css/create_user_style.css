@@ -3,7 +3,6 @@
 	Author      : Rameshwar Sah  Date: 14th,March,2013  Creation
 */ 
 
-
 body, div, ul, li, p, a, img, input, h1, h2, h3, h4, h5 { margin:0; padding:0; }
 a:hover, selected, visited { border:none; }
 stextarea:focus, input:focus { outline: none; }
