@@ -17,7 +17,10 @@ Achievement Service
 **The following features have been pushed to the Social Service :**
 
 ```
-
+facebookPublishStream
+facebookLinkPost
+facebookLinkPostWithCustomThumbnail
+getFacebookProfile
 ```
 
 **This release contains the following bug fix:**
