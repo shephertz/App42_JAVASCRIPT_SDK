@@ -14,11 +14,10 @@ Avatar Service
 Achievement Service
 ```
 
-**The following features have been pushed to the latest :**
+**The following features have been pushed to the Social Service :**
 
 ```
-Avatar Service
-Achievement Service
+
 ```
 
 **This release contains the following bug fix:**
