@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>App42 Photo Sample </title>
+        <link href="../css/create_user_style.css" rel="stylesheet" type="text/css" />
+		 <link href="../css/jqueryAlert.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript" src="../App42-all-1.5.min.js"></script>
+        <script type="text/javascript" src="../jqueryAlert.js"></script>
+       
+        <script>
+		App42.initialize("YOUR_API_KEY","YOUR_SECRET_KEY");
+		
+				function createAlbum(){
+                var album  = new App42Album();
+                var albumName = "album"+new Date();
+                var description = "new album created";
+                var userName = "userName"+new Date();
+                var result ;
+                album.createAlbum(userName,albumName, description,{
+                    success: function(object) {
+						 $(".success").show();
+							var storageObj = JSON.parse(object)
+							$('#success').html("Add Photo");
+							jAlert('Album has been successfully created',"Create Album");
+                    },
+                    error: function(error) {
+                       
+						
+                    }
+                }); 
+            }
+			
+			function getAlbums(){
+                var album  = new App42Album();
+                var albumName = "album"+new Date();
+                var description = "new album created";
+                var userName = "userName"+new Date();
+                var result ;
+                album.createAlbum(userName,albumName, description,{
+                    success: function(object) {
+						album.getAlbums(userName,{
+						success: function(object) {
+						 $(".success").show();
+							var storageObj = JSON.parse(object)
+							$('#success').html("Add Photo");
+							jAlert('Albums has been successfully fetched',"Get Albums");
+                    },
+                    error: function(error) {
+                       
+						
+                    }
+                }); 
+            },
+			 error: function(error) {
+                       
+						
+                    }
+                }); 
+            }
+			
+			function getAlbumsByPaging(){
+                var album  = new App42Album();
+                var albumName = "album"+new Date();
+				var newAlbum = "newAlbum"+new Date();
+                var description = "new album created";
+                var userName = "userName"+new Date();
+				var max =2;
+				var offset =0;
+                var result ;
+                album.createAlbum(userName,albumName, description,{
+                    success: function(object) {
+					album.createAlbum(userName,newAlbum, description,{
+                    success: function(object) {
+						album.getAlbumsByPaging(userName,max,offset,{
+						success: function(object) {
+						 $(".success").show();
+							var storageObj = JSON.parse(object)
+							$('#success').html("Add Photo");
+							jAlert('Albums has been successfully fetched',"Get Albums By Paging");
+                    },
+                    error: function(error) {
+						
+                    }
+                }); 
+            },
+			 error: function(error) {
+						
+                    }
+                }); 
+            },
+			 error: function(error) {
+                    }
+                }); 
+            }
+			
+			function getAlbumsCount(){
+                var album  = new App42Album();
+                var albumName = "album"+new Date();
+				var newAlbum = "newAlbum"+new Date();
+                var description = "new album created";
+                var userName = "userName"+new Date();
+				var result ;
+                album.createAlbum(userName,albumName, description,{
+                    success: function(object) {
+					album.createAlbum(userName,newAlbum, description,{
+                    success: function(object) {
+						album.getAlbumsCount(userName,{
+						success: function(object) {
+						 $(".success").show();
+							var storageObj = JSON.parse(object)
+							$('#success').html("Add Photo");
+							jAlert('Albums count has been successfully fetched',"Get Albums Count");
+                    },
+                    error: function(error) {
+                       con
+						
+                    }
+                }); 
+            },
+			 error: function(error) {
+                       console.log(error)
+						
+                    }
+                }); 
+            },
+			 error: function(error) {
+                       
+						
+                    }
+                }); 
+            }
+			
+			function getAlbumByName(){
+                var album  = new App42Album();
+                var albumName = "album"+new Date();
+				var newAlbum = "newAlbum"+new Date();
+                var description = "new album created";
+                var userName = "userName"+new Date();
+				var result ;
+                album.createAlbum(userName,albumName, description,{
+                    success: function(object) {
+					album.createAlbum(userName,newAlbum, description,{
+                    success: function(object) {
+						album.getAlbumByName(userName,newAlbum,{
+							success: function(object) {
+						 $(".success").show();
+							var storageObj = JSON.parse(object)
+							$('#success').html("Add Photo");
+							jAlert('Album has been successfully fetched',"Get Album By Name");
+                    },
+                    error: function(error) {
+                       con
+						
+                    }
+                }); 
+            },
+			 error: function(error) {
+                       console.log(error)
+						
+                    }
+                }); 
+            },
+			 error: function(error) {
+                       
+						
+                    }
+                }); 
+            }
+			
+			function removeAlbum(){
+                var album  = new App42Album();
+                var albumName = "albumNdame";
+                var description = "new album created";
+                var userName = "userName";
+                var result ;
+                album.createAlbum(userName,albumName, description,{
+                    success: function(object) {
+						album.removeAlbum(userName,albumName,{
+							success: function(object) {
+							$(".success").show();
+							var storageObj = JSON.parse(object)
+							$('#success').html("Add Photo");
+							jAlert('Album has been successfully removed',"Remove Album");
+                    },
+                    error: function(error) {
+                       console.log(error)
+						
+                    }
+                }); 
+            },
+			 error: function(error) {
+                       
+						
+                    }
+                }); 
+            }
+					
+		function addPhoto(){
+				var album  = new App42Album();
+				var photo  = new App42Photo();
+				var albumName = "albumName"+ new Date().getTime();
+				var description = "new album created";
+				var userName = "userName";
+				var photoDescription = "photoDescription";
+				var filePath = document.getElementById("filePath");
+				var file = filePath.files[0];
+				var result ;
+                album.createAlbum(userName,albumName, description,{
+                    success: function(object) {
+					 photo.addPhoto(userName,albumName,"Photo",photoDescription,file,{
+                    success: function(object) {
+						 $(".success").show();
+							var storageObj = JSON.parse(object)
+							$('#success').html("Add Photo");
+							jAlert('Photo has been successfully add',"Add Photo");
+                    },
+                    error: function(error) {
+                       
+						
+                    }
+                }); 
+            },
+			error: function(error) {
+                       
+						
+                    }
+                }); 
+            }
+			
+			function getPhotos(){
+				var album  = new App42Album();
+				var photo  = new App42Photo();
+				var albumName = "albumName"+ new Date().getTime();
+				var description = "new album created";
+				var photoName = "photoName";
+				var userName = "userName";
+				var photoDescription = "photoDescription";
+				var filePath = document.getElementById("filePath");
+				var file = filePath.files[0];
+				var result ;
+                album.createAlbum(userName,albumName, description,{
+                    success: function(object) {
+					 photo.addPhoto(userName,albumName,photoName,photoDescription,file,{
+                    success: function(object) {
+					photo.getPhotos(userName,{
+                    success: function(object) {
+						 $(".success").show();
+							var storageObj = JSON.parse(object)
+							$('#success').html("Add Photo");
+							jAlert('Photos has been successfully fetched',"Get Photos");
+                    },
+                    error: function(error) {
+                       
+						
+                    }
+                }); 
+            },
+			error: function(error) {
+                       
+						
+                    }
+                }); 
+            },
+			error: function(error) {
+                       
+						
+                    }
+                }); 
+            }
+						
+			function getPhotosByAlbumName(){
+				var album  = new App42Album();
+				var photo  = new App42Photo();
+				var albumName = "albumName"+ new Date().getTime();
+				var description = "new album created";
+				var photoName = "photoName";
+				var userName = "userName";
+				var photoDescription = "photoDescription";
+				var filePath = document.getElementById("filePath");
+				var file = filePath.files[0];
+				var result ;
+                album.createAlbum(userName,albumName, description,{
+                    success: function(object) {
+					 photo.addPhoto(userName,albumName,photoName,"photo added",file,{
+                    success: function(object) {
+					photo.getPhotosByAlbumName(userName,albumName,{
+                    success: function(object) {
+						 $(".success").show();
+							var storageObj = JSON.parse(object)
+							$('#success').html("Add Photo");
+							jAlert('Photos by album has been successfully fetched',"Get Photos By Album Name");
+                    },
+                    error: function(error) {
+                       
+						
+                    }
+                }); 
+            },
+			error: function(error) {
+                       
+						
+                    }
+                }); 
+            },
+			error: function(error) {
+                       
+						
+                    }
+                }); 
+            }
+			
+			function getPhotosCountByAlbumName(){
+				var album  = new App42Album();
+				var photo  = new App42Photo();
+				var albumName = "albumName"+ new Date().getTime();
+				var description = "new album created";
+				var photoName = "photoName";
+				var userName = "userName";
+				var photoDescription = "photoDescription";
+				var filePath = document.getElementById("filePath");
+				var file = filePath.files[0];
+				var result ;
+                album.createAlbum(userName,albumName, description,{
+                    success: function(object) {
+					 photo.addPhoto(userName,albumName,photoName,photoDescription,file,{
+                    success: function(object) {
+					photo.getPhotosCountByAlbumName(userName,albumName,{
+                    success: function(object) {
+						 $(".success").show();
+							var storageObj = JSON.parse(object)
+							$('#success').html("Add Photo");
+							jAlert('Photos count by album has been successfully fetched',"Get Photos Count By Album Name");
+                    },
+                    error: function(error) {
+                       
+						
+                    }
+                }); 
+            },
+			error: function(error) {
+                       
+						
+                    }
+                }); 
+            },
+			error: function(error) {
+                       
+						
+                    }
+                }); 
+            }
+			
+			function getPhotosByAlbumNameByPaging(){
+				var album  = new App42Album();
+				var photo  = new App42Photo();
+				var albumName = "albumName"+ new Date().getTime();
+				var photoName = "photoName";
+				var description = "new album created";
+				var userName = "userName";
+				var max = 1;
+				var offset = 0;
+				var photoDescription = "photoDescription";
+				var filePath = document.getElementById("filePath");
+				var file = filePath.files[0];
+				var result ;
+                album.createAlbum(userName,albumName, description,{
+                    success: function(object) {
+					 photo.addPhoto(userName,albumName,photoName,photoDescription,file,{
+                    success: function(object) {
+					photo.getPhotosByAlbumNameByPaging(userName,albumName,max,offset,{
+                    success: function(object) {
+						 $(".success").show();
+							var storageObj = JSON.parse(object)
+							$('#success').html("Add Photo");
+							jAlert('Photos by paging has been successfully fetched',"Get Photos By Album Name With Paging");
+                    },
+                    error: function(error) {
+                       console.log(error)
+						
+                    }
+                }); 
+            },
+			error: function(error) {
+                       
+						
+                    }
+                }); 
+            },
+			error: function(error) {
+                       
+						
+                    }
+                }); 
+            }
+			
+			function getPhotosByAlbumAndPhotoName(){
+				var album  = new App42Album();
+				var photo  = new App42Photo();
+				var albumName = "albumName"+ new Date().getTime();
+				var description = "new album created";
+				var photoName = "photoName";
+				var userName = "userName";
+				var max = 1;
+				var offset = 0;
+				var photoDescription = "photoDescription";
+				var filePath = document.getElementById("filePath");
+				var file = filePath.files[0];
+				var result ;
+                album.createAlbum(userName,albumName, description,{
+                    success: function(object) {
+					 photo.addPhoto(userName,albumName,photoName,photoDescription,file,{
+                    success: function(object) {
+					photo.getPhotosByAlbumAndPhotoName(userName,albumName,photoName,{
+                    success: function(object) {
+						 $(".success").show();
+							var storageObj = JSON.parse(object)
+							$('#success').html("Add Photo");
+							jAlert('Photo has been successfully fetch',"Get Photos By Album Name And Photo Name");
+                    },
+                    error: function(error) {
+                       
+						
+                    }
+                }); 
+            },
+			error: function(error) {
+                       
+						
+                    }
+                }); 
+            },
+			error: function(error) {
+                       
+						
+                    }
+                }); 
+            }
+			function addTagToPhoto(){
+                var album  = new App42Album();
+				 var photo  = new App42Photo();
+                var albumName = "albumName"+ new Date().getTime();
+                var description = "new album created";
+				var photoName = "photoName";
+                var userName = "userName";
+				var photoDescription = "photoDescription";
+				var filePath = document.getElementById("filePath");
+			
+				var tagList = new Array();
+					tagList.push("testUser")
+					tagList.push("Ajay")
+				 var file = filePath.files[0];
+                var result ;
+                album.createAlbum(userName,albumName, description,{
+                    success: function(object) {
+					photo.addPhoto(userName,albumName,photoName,"photo added",file,{
+                    success: function(object) {
+					photo.addTagToPhoto(userName,albumName,photoName,tagList,{
+                    success: function(object) {
+						 $(".success").show();
+							var storageObj = JSON.parse(object)
+							$('#success').html("Add Photo");
+							jAlert('Photo has been successfully tag',"Add Tag To Photo");
+                    },
+                    error: function(error) {
+					
+                       console.log(error)
+						
+                    }
+                }); 
+            },
+			error: function(error) {
+					
+                       
+						
+                    }
+                }); 
+            },
+			error: function(error) {
+                       
+						
+                    }
+                }); 
+            }
+			
+			function getTaggedPhotos(){
+				var album  = new App42Album();
+				var photo  = new App42Photo();
+				var albumName = "albumName"+ new Date().getTime();
+				var description = "new album created";
+				var photoName = "photoName";
+				var userName = "userName";
+				var photoDescription = "photoDescription";
+				var filePath = document.getElementById("filePath");
+			
+				var tagList = new Array();
+					tagList.push("testUser")
+					tagList.push("testUser2")
+				 var file = filePath.files[0];
+                var result ;
+                album.createAlbum(userName,albumName, description,{
+                    success: function(object) {
+					photo.addPhoto(userName,albumName,photoName,"photo added",file,{
+                    success: function(object) {
+					photo.addTagToPhoto(userName,albumName,photoName,tagList,{
+                    success: function(object) {
+					photo.getTaggedPhotos(userName,"testUser",{
+                    success: function(object) {
+						 $(".success").show();
+							var storageObj = JSON.parse(object)
+							$('#success').html("Add Photo");
+							jAlert('TagPhoto has been successfully fetched',"Get Tagged Photos");
+                    },
+                    error: function(error) {
+					
+                       console.log(error)
+						
+                    }
+                }); 
+            },
+			error: function(error) {
+					
+                       
+						
+                    }
+                }); 
+            },
+			error: function(error) {
+                       
+						
+                    }
+                }); 
+            },
+			error: function(error) {
+                       
+						
+                    }
+                }); 
+            }
+		</script>
+		<body>
+		<div id="header_wrapper">
+            <div id="header_inner">
+                <div id="logo"><a href="http://shephertz.com/api"><img border="0" alt="CloudAPI" src="../images/logo.png"></a></div>
+            </div>
+        </div>
+		<input type="file" name="filePath" id="filePath"class ="input_box" onfocus="if(this.value=='File Path'){this.value=''};" onblur="if(this.value==''){this.value='File Path'};" value="File Path">
+		<input type = "button" value="createAlbum" name = "create" class ="createBtn" onclick="createAlbum();"/>
+		<input type = "button" value="getAlbums" name = "create" class ="createBtn" onclick="getAlbums();"/>
+		<input type = "button" value="getAlbumsByPaging" name = "create" class ="createBtn" onclick="getAlbumsByPaging();"/>
+		<input type = "button" value="getAlbumsCount" name = "create" class ="createBtn" onclick="getAlbumsCount();"/>
+		<input type = "button" value="getAlbumByName" name = "create" class ="createBtn" onclick="getAlbumByName();"/>
+		<input type = "button" value="removeAlbum" name = "create" class ="createBtn" onclick="removeAlbum();"/>
+		<input type = "button" value="addPhoto" name = "file" class ="createBtn" onclick="addPhoto();"/>
+		<input type = "button" value="getPhotos" name = "file" class ="createBtn" onclick="getPhotos();"/>
+		<input type = "button" value="getPhotosByAlbumName" name = "file" class ="createBtn" onclick="getPhotosByAlbumName();"/>
+		<input type = "button" value="getPhotosCountByAlbumName" name = "file" class ="createBtn" onclick="getPhotosCountByAlbumName();"/>
+		<input type = "button" value="getPhotosByAlbumAndPhotoName" name = "file" class ="createBtn" onclick="getPhotosByAlbumAndPhotoName();"/>
+		<input type = "button" value="getPhotosByAlbumNameByPaging" name = "file" class ="createBtn" onclick="getPhotosByAlbumNameByPaging();"/>
+		<input type = "button" value="addTagToPhoto" name = "file" class ="createBtn" class ="createBtn" onclick="addTagToPhoto();"/>
+		<input type = "button" value="getTaggedPhotos" name = "file"  class ="createBtn" onclick="getTaggedPhotos();"/>
+		<div class="clear"></div>
+        <div id="footer">
+            <div id="copy">Copyright &copy; 2013 ShepHertz Technologies Pvt Ltd. All rights reserved.</div>
+        </div>
+			</body>	 	
+</html>

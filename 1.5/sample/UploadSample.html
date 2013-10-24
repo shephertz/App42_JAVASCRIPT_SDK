@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>App42 Upload Sample </title>
+        <link href="../css/create_user_style.css" rel="stylesheet" type="text/css" />
+		 <link href="../css/jqueryAlert.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript" src="../App42-all-1.5.min.js"></script>
+        <script type="text/javascript" src="../jqueryAlert.js"></script>
+        <script>
+		App42.initialize("YOUR_API_KEY","YOUR_SECRET_KEY");
+		
+            function uploadFile() {
+				var upload  = new App42Upload();
+                var name = "name"+ new Date() ;
+                var filePath = document.getElementById("filePath");
+                var fileType = "IMAGE";
+                var description = "description";
+                var file = filePath.files[0];
+                upload.uploadFile(name, file, fileType,description,{
+                    success: function(object) {
+                      $(".success").show();
+							var uploadObj = JSON.parse(object)
+							$('#success').html("uploadFile");
+							jAlert('File has been successfully Uploaded',"Upload File");
+							console.log(uploadObj)
+                    },
+                    error: function(error) {
+                    }
+                });
+            }
+			function uploadFileForUser() {
+				var upload  = new App42Upload();
+                var name = "name" + new Date() ;
+				var userName = "userName" + new Date() ;
+                var filePath = document.getElementById("filePath");
+                var fileType = "IMAGE";
+                var description = "description";
+                var file = filePath.files[0];
+                upload.uploadFileForUser(name,userName,file, fileType,description,{
+                    success: function(object) {
+                         $(".success").show();
+								var uploadObj = JSON.parse(object)
+								$('#success').html("uploadFileForUser");
+								jAlert('File has been successfully Uploaded For the User.',"Upload File For User");
+								console.log(uploadObj)
+							},
+						error: function(error) {
+					}
+                });
+            }
+			
+			function getAllFiles() {
+				var upload  = new App42Upload();
+                var name = "name" + new Date() ;
+				var userName = "userName" + new Date() ;
+                var filePath = document.getElementById("filePath");
+                var fileType = "IMAGE";
+                var description = "description";
+                var file = filePath.files[0];
+                upload.uploadFileForUser(name,userName,file, fileType,description,{
+                    success: function(object) {
+					upload.getAllFiles({
+						success: function(object) {
+							 $(".success").show();
+								var uploadObj = JSON.parse(object)
+								$('#success').html("getAllFiles");
+								jAlert('Uploaded Files has been successfully fetched',"Get All Files");
+								console.log(uploadObj)
+							},
+									error: function(error) {
+								}
+							});
+						},
+						error: function(error) {
+					}
+				});
+            }
+                    
+			function getAllFilesWithPaging() {
+				var upload  = new App42Upload();
+                var name = "nameFil"+ new Date() ;
+				var	max  = 1;
+				var offset =0;
+                var filePath = document.getElementById("filePath");
+                var fileType = "IMAGE";
+                var description = "description";
+                var file = filePath.files[0];
+                upload.uploadFile(name, file, fileType,description,{
+                    success: function(object) {
+                upload.getAllFilesByPaging(max,offset,{
+                    success: function(object) {
+                        $(".success").show();
+									var uploadObj = JSON.parse(object)
+									$('#success').html("getAllFilesWithPaging");
+									jAlert('Uploaded Files has been successfully fetched',"Get All Files With Paging");
+									console.log(uploadObj)
+								},
+                            error: function(error) {
+							console.log(error)
+                            }
+                        }); 
+                    },
+                    error: function(error) {
+                    }
+                }); 
+            }
+			   
+			
+			function getFileByName() {
+				var upload  = new App42Upload();
+                var name = "nameFile"+ new Date() ;
+                var filePath = document.getElementById("filePath");
+                var fileType = "IMAGE";
+                var description = "description";
+                var file = filePath.files[0];
+                upload.uploadFile(name, file, fileType,description,{
+                    success: function(object) {
+                upload.getFileByName(name,{
+                    success: function(object) {
+                         $(".success").show();
+									var uploadObj = JSON.parse(object)
+									$('#success').html("getFileByName");
+									jAlert('File has been successfully fetched',"Get File By Name");
+									console.log(uploadObj)
+								},
+                            error: function(error) {
+                            }
+                        }); 
+                    },
+                    error: function(error) {
+                    }
+                }); 
+            }
+			
+			
+			function getFilesByType() {
+				var upload  = new App42Upload();
+                var name = "nameFile"+ new Date() ;
+                var filePath = document.getElementById("filePath");
+                var fileType = "IMAGE";
+                var description = "description";
+                var file = filePath.files[0];
+                upload.uploadFile(name, file, fileType,description,{
+                    success: function(object) {
+                upload.getFilesByType("IMAGE",{
+                    success: function(object) {
+                         $(".success").show();
+									var uploadObj = JSON.parse(object)
+									$('#success').html("getFilesByType");
+									jAlert('File has been successfully fetched',"Get Files By Type");
+									console.log(uploadObj)
+								},
+                            error: function(error) {
+                            }
+                        }); 
+                    },
+                    error: function(error) {
+                    }
+                }); 
+            }
+			
+			
+			
+			function getFileByUser() {
+				var upload  = new App42Upload();
+                var name = "nameFilee"+ new Date() ;
+                var filePath = document.getElementById("filePath");
+				var userName = "userName";
+                var fileType = "IMAGE";
+                var description = "description";
+                var file = filePath.files[0];
+                 upload.uploadFileForUser(name,userName,file, fileType,description,{
+                    success: function(object) {
+					upload.getFileByUser(name,userName,{
+                    success: function(object) {
+                        $(".success").show();
+									var uploadObj = JSON.parse(object)
+									$('#success').html("getFileByUser");
+									jAlert('File has been successfully fetch for User',"Get File By User");
+									console.log(uploadObj)
+								},
+                            error: function(error) {
+                            }
+                        }); 
+                    },
+                    error: function(error) {
+                    }
+                }); 
+            }
+			
+		
+			function getAllFilesByUserPaging() {
+				var upload  = new App42Upload();
+                var name = "nameFilee"+ new Date() ;
+                var filePath = document.getElementById("filePath");
+				var max = 1;
+				var offset = 0;
+				var userName = "userName";
+                var fileType = "IMAGE";
+                var description = "description";
+                var file = filePath.files[0];
+                 upload.uploadFileForUser(name,userName,file, fileType,description,{
+                    success: function(object) {
+					upload.getAllFilesByUserWithPaging(userName,max,offset,{
+                    success: function(object) {
+                         $(".success").show();
+									var uploadObj = JSON.parse(object)
+									$('#success').html("getAllFilesByUserPaging");
+									jAlert('Uploaded Files has been successfully fetched for user',"Get All Files By User Paging");
+									console.log(uploadObj)
+								},
+                            error: function(error) {
+                            }
+                        }); 
+                    },
+                    error: function(error) {
+                    }
+                }); 
+            }
+			function getAllFilesByUser() {
+				var upload  = new App42Upload();
+                var name = "nameFilee"+ new Date() ;
+                var filePath = document.getElementById("filePath");
+				var max = 1;
+				var offset = 0;
+				var userName = "userName";
+                var fileType = "IMAGE";
+                var description = "description";
+                var file = filePath.files[0];
+                 upload.uploadFileForUser(name,userName,file, fileType,description,{
+                    success: function(object) {
+					upload.getAllFilesByUser(userName,{
+                    success: function(object) {
+                         $(".success").show();
+									var uploadObj = JSON.parse(object)
+									$('#success').html("getAllFilesByUser");
+									jAlert('Uploaded Files has been successfully fetched for user',"Get All Files By User");
+									console.log(uploadObj)
+								},
+                            error: function(error) {
+                            }
+                        }); 
+                    },
+                    error: function(error) {
+                    }
+                }); 
+            }
+		  
+		</script>
+		<body>
+		<div id="header_wrapper">
+            <div id="header_inner">
+                <div id="logo"><a href="http://shephertz.com/api"><img border="0" alt="CloudAPI" src="../images/logo.png"></a></div>
+            </div>
+        </div>
+		<input type="file" name="filePath" id="filePath"class ="input_box" onfocus="if(this.value=='File Path'){this.value=''};" onblur="if(this.value==''){this.value='File Path'};" value="File Path">
+		<input type="button" onclick="uploadFile()" name="file" class ="createBtn" value="Upload File"/>
+		<input type="button" onclick="uploadFileForUser()" name="file" class ="createBtn" value="uploadFileForUser File"/>
+		<input type = "button" value="getAllFilesWithPaging" name = "create" class ="createBtn" onclick="getAllFilesWithPaging();"/>
+		<input type = "button" value="getFileByName" name = "create" class ="createBtn" onclick="getFileByName();"/>
+		<input type = "button" value="getFilesByType" name = "create" class ="createBtn" onclick="getFilesByType();"/>
+		<input type = "button" value="getFileByUser" name = "create" class ="createBtn" onclick="getFileByUser();"/>
+		<input type = "button" value="getAllFilesByUserPaging" name = "create" class ="createBtn" onclick="getAllFilesByUserPaging();"/>
+		<input type = "button" value="getAllFilesByUser" name = "create"  class ="createBtn" onclick="getAllFilesByUser();"/>
+			<div class="clear"></div>
+        <div id="footer">
+            <div id="copy">Copyright &copy; 2013 ShepHertz Technologies Pvt Ltd. All rights reserved.</div>
+        </div>
+	
+    </body>
+</html>

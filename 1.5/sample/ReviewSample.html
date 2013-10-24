@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>App42 Review Sample </title>
+        <link href="../css/create_user_style.css" rel="stylesheet" type="text/css" />
+		 <link href="../css/jqueryAlert.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript" src="../App42-all-1.5.min.js"></script>
+        <script type="text/javascript" src="../jqueryAlert.js"></script>
+
+        <script>
+		App42.initialize("YOUR_API_KEY","YOUR_SECRET_KEY");
+		
+         function createReview(){
+                var review  = new App42Review();
+                var userId = "userId"+new Date();
+                var ItemId = "ItemId";
+                var description = "reviewComment";
+                 var result ;
+                review.createReview(userId, ItemId,description,5,{
+                    success: function(object) {
+                         $(".success").show();
+								var reviewObj = JSON.parse(object)
+								$('#success').html("Review created");
+								jAlert('Review successfully created',"Create Review");
+								console.log(reviewObj)
+						},
+                    error: function(error) {
+						
+                    }
+                }); 
+            }
+			
+			
+			function getAllReviews(){
+				 var review  = new App42Review();
+                var userId = "userId11" + new Date();
+                 var result ;
+					review.createReview(userId, "ItemId","reviewComment",5,{
+                    success: function(object) {
+                    review.getAllReviews({
+                            success: function(object) {
+							 $(".success").show();
+								var reviewObj = JSON.parse(object)
+								$('#success').html("getAllReviews");
+								jAlert('Review successfully fetched',"Get All Review");
+							
+								console.log(reviewObj)
+						},
+                            error: function(error) {
+                                console.log()
+								
+                                 
+                    }
+                }); 
+            },
+                    error: function(error) {
+                     console.log(error)
+                    }
+                }); 
+            }
+			
+			function getAllReviewsCount(){
+				 var review  = new App42Review();
+                var userId = "userId11" + new Date();
+                 var result ;
+					review.createReview(userId, "ItemId","reviewComment",5,{
+                    success: function(object) {
+                    review.getAllReviewsCount({
+                            success: function(object) {
+							 $(".success").show();
+								var reviewObj = JSON.parse(object)
+								$('#success').html("getAllReviewsCount");
+								jAlert('Review successfully count',"Get All Review Count");
+							
+								console.log(reviewObj)
+						},
+                            error: function(error) {
+                                console.log()
+								
+                                 
+                    }
+                }); 
+            },
+                    error: function(error) {
+                     console.log(error)
+                    }
+                }); 
+            }
+			
+			function getReviewsByItem(){
+				 var review  = new App42Review();
+                var userId = "userId11" + new Date();
+                var ItemId = "ItemId" + new Date();
+                 var result ;
+					review.createReview(userId, ItemId,"reviewComment",5,{
+                    success: function(object) {
+                    review.getReviewsByItem(ItemId,{
+                            success: function(object) {
+							 $(".success").show();
+								var reviewObj = JSON.parse(object)
+								$('#success').html("getReviewsByItem");
+								jAlert('Review by item successfully fetched',"Get Review By Item");
+							
+								console.log(reviewObj)
+						},
+                            error: function(error) {
+                                console.log()
+								
+                                 
+                    }
+                }); 
+            },
+                    error: function(error) {
+                     console.log(error)
+                    }
+                }); 
+            }
+			
+			
+			function getReviewsCountByItem(){
+				 var review  = new App42Review();
+                var userId = "userId11" + new Date();
+                 var result ;
+					review.createReview(userId, "ItemId","reviewComment",5,{
+                    success: function(object) {
+                    review.getReviewsCountByItem("ItemId",{
+                            success: function(object) {
+							 $(".success").show();
+								var reviewObj = JSON.parse(object)
+								$('#success').html("getReviewsCountByItem");
+								jAlert('Review by item successfully count',"Get Review Count By Item");
+							
+								console.log(reviewObj)
+						},
+                            error: function(error) {
+                                console.log()
+								
+                                 
+                    }
+                }); 
+            },
+                    error: function(error) {
+                     console.log(error)
+                    }
+                }); 
+            }
+			
+			
+			function getHighestReviewByItem(){
+				 var review  = new App42Review();
+                var userId = "userId11" + new Date();
+                 var result ;
+					review.createReview(userId, "ItemId","reviewComment",2,{
+                    success: function(object) {
+                    review.getHighestReviewByItem("ItemId",{
+                            success: function(object) {
+							 $(".success").show();
+								var reviewObj = JSON.parse(object)
+								$('#success').html("getHighestReviewByItem");
+								jAlert('highest review by item successfully fetched',"Get Highest Review By Item");
+								console.log(reviewObj)
+						},
+                            error: function(error) {
+                                console.log()
+								
+                                 
+                    }
+                }); 
+            },
+                    error: function(error) {
+                     console.log(error)
+                    }
+                }); 
+            }
+			
+			
+			function getLowestReviewByItem(){
+				 var review  = new App42Review();
+                var userId = "userId11" + new Date();
+                 var result ;
+					review.createReview(userId, "ItemId","reviewComment",2,{
+                    success: function(object) {
+                    review.getLowestReviewByItem("ItemId",{
+                            success: function(object) {
+							 $(".success").show();
+								var reviewObj = JSON.parse(object)
+								$('#success').html("getLowestReviewByItem");
+									jAlert('Lowest review by item successfully fetched',"Get Highest Review By Item");
+
+								console.log(reviewObj)
+						},
+                            error: function(error) {
+                                console.log()
+								
+                                 
+                    }
+                }); 
+            },
+                    error: function(error) {
+                     console.log(error)
+                    }
+                }); 
+            }
+			
+					
+			function getAverageReviewByItem(){
+				 var review  = new App42Review();
+                var userId = "userId11" + new Date();
+                 var result ;
+					review.createReview(userId, "ItemId","reviewComment",2,{
+                    success: function(object) {
+                    review.getAverageReviewByItem("ItemId",{
+                            success: function(object) {
+							 $(".success").show();
+								var reviewObj = JSON.parse(object)
+								$('#success').html("getAverageReviewByItem");
+									jAlert('Average review by item successfully fetched',"Get Highest Review By Item");
+
+								console.log(reviewObj)
+						},
+                            error: function(error) {
+                                console.log()
+								
+                                 
+                    }
+                }); 
+            },
+                    error: function(error) {
+                     console.log(error)
+                    }
+                }); 
+            }
+			
+		
+			
+			
+			function mute(){
+				 var review  = new App42Review();
+                var userId = "userId11" + new Date();
+                 var result ;
+					review.createReview(userId, "ItemId","reviewComment",2,{
+                    success: function(object) {
+                    review.mute(JSON.parse(object).app42.response.reviews.review.reviewId,{
+                            success: function(object) {
+							 $(".success").show();
+								var reviewObj = JSON.parse(object)
+								$('#success').html("mute");
+									jAlert('Reward successfully mute',"Mute");
+
+								console.log(reviewObj)
+						},
+                            error: function(error) {
+                                console.log()
+								
+                                 
+                    }
+                }); 
+            },
+                    error: function(error) {
+                     console.log(error)
+                    }
+                }); 
+            }
+			
+			
+			function unmute(){
+				var review  = new App42Review();
+				var userId = "userId11" + new Date();
+                var result ;
+					review.createReview(userId, "ItemId","reviewComment",2,{
+                    success: function(object) {
+						review.unmute(JSON.parse(object).app42.response.reviews.review.reviewId,{
+                            success: function(object) {
+								 $(".success").show();
+								var reviewObj = JSON.parse(object)
+								$('#success').html("unmute");
+								jAlert('Reward successfully mute',"Unmute");
+
+								console.log(reviewObj)
+						},
+						error: function(error) {
+                         console.log()
+						                                 
+						}
+						}); 
+					},
+                    error: function(error) {
+                     console.log(error)
+                    }
+                }); 
+            }
+			
+			function getReviewsCountByItemAndRating(){
+				var review  = new App42Review();
+				var userId = "userId11" + new Date();
+                var result ;
+					review.createReview(userId, "ItemId","reviewComment",6,{
+                    success: function(object) {
+						review.getReviewsCountByItemAndRating("ItemId",6,{
+                            success: function(object) {
+								 $(".success").show();
+								var reviewObj = JSON.parse(object)
+								$('#success').html("getReviewsCountByItemAndRating");
+								jAlert('Reward by item and rating successfully count',"Get Reviews Count By Item And Rating");
+
+								console.log(reviewObj)
+						},
+						error: function(error) {
+                         console.log()
+						                                 
+						}
+						}); 
+					},
+                    error: function(error) {
+                     console.log(error)
+                    }
+                }); 
+            }
+			
+			
+		</script>
+		<body>
+		<div id="header_wrapper">
+            <div id="header_inner">
+                <div id="logo"><a href="http://shephertz.com/api"><img border="0" alt="CloudAPI" src="../images/logo.png"></a></div>
+            </div>
+        </div>
+				   
+		<input type = "button" value="createReview" name = "create"  class ="createBtn" onclick="createReview();"/>
+		
+			<input type = "button" value="getAllReviews" name = "create"  class ="createBtn" onclick="getAllReviews();"/>
+				
+		
+		<input type = "button" value="getAllReviewsCount" name = "create"  class ="createBtn" onclick="getAllReviewsCount();"/><p>
+		
+		<input type = "button" value="getReviewsByItem" name = "create"  class ="createBtn" onclick="getReviewsByItem();"/>
+						
+		
+		<input type = "button" value="getReviewsCountByItem" name = "create"  class ="createBtn" onclick="getReviewsCountByItem();"/>
+		
+		<input type = "button" value="getHighestReviewByItem" name = "create"  class ="createBtn" onclick="getHighestReviewByItem();"/>
+		
+		<input type = "button" value="getLowestReviewByItem" name = "create"  class ="createBtn" onclick="getLowestReviewByItem();"/>
+
+		<input type = "button" value="getAverageReviewByItem" name = "create"  class ="createBtn" onclick="getAverageReviewByItem();"/>
+	
+		<input type = "button" value="mute" name = "create"  class ="createBtn" onclick="mute();"/>
+
+			<input type = "button" value="unmute" name = "create"  class ="createBtn" onclick="unmute();"/>
+	
+			<input type = "button" value="getReviewsCountByRating" name = "create"  class ="createBtn" onclick="getReviewsCountByItemAndRating();"/>
+<div class="clear"></div>
+        <div id="footer">
+            <div id="copy">Copyright &copy; 2013 ShepHertz Technologies Pvt Ltd. All rights reserved.</div>
+        </div>
+			</body>
+</html>
