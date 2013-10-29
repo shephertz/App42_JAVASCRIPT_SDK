@@ -14,8 +14,8 @@ App42 BPaaS Cloud API Client SDK JAR files for JavaScript
 - Initialize the library using
  
 ```javascript
-App42.initialize("<YOUR_API_KEY>","<YOUR_SECRET KEY");
-App42.setBaseUrl("YOUR_BPAAS_API_SERVER_URL");
+App42.initialize("<YOUR_API_KEY>","<YOUR_SECRET_KEY>");
+App42.setBaseUrl("<YOUR_BPAAS_API_SERVER_URL>");
 ```
 
 - Instantiate the service that one wants to use in the App, e.g. using User service one has to do the following
