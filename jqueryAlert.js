@@ -1,7 +1,7 @@
 // jQuery Alert Dialogs Plugin
 //
 // Version 1.1
-//
+//  
 // Cory S.N. LaViska
 // A Beautiful Site (http://abeautifulsite.net/)
 // 14 May 2009
