@@ -1,16 +1,17 @@
-App42_JAVASCRIPT_SDK
+App42_BPAAS_JAVASCRIPT_SDK
 ====================
 
-App42 Cloud API Client SDK JAR files for JavaScript
+App42 BPaaS Cloud API Client SDK JAR files for JavaScript
 
-- Download the latest App42 Java Script SDK
-- Unzip the file and copy App42-all-x.x.x.min.js to your project  source.
+- Download the latest App42 BPaaS Java Script SDK
+- Unzip the file and copy App42-BPaaS-all-x.x.x.min to your project  source.
 - Add the following script tag in the your html page
-script type="text/javascript" src="App42-all-x.x.x.min.js"
+script type="text/javascript" src="App42-BPaaS-all-x.x.x.min.js"
 - Initialize the library using
  
 ```javascript
 App42.initialize("API KEY","SECRET KEY");
+ App42.setBaseUrl("YOUR API SERVER URL");
 ```
 
 - Instantiate the service that one wants to use in the App, e.g. using User service one has to do the following
@@ -30,13 +31,13 @@ error: function(error) {
 });
 ```
 
-- Executing above method will create user for your app in App42 cloud.
-- You can login to AppHQ console and can see the created user there.
+- Executing above method will create user for your app in App42 BPaaS cloud.
+- You can login to BPaaS AppHQ console and can see the created user there.
 - You can also use your UserSample.HTML/StorageSample.HTML shipped with distribution for more details.
-- Similarly one can use other App42 services like File Upload, Gaming, NoSQL Storage to make user engaging social Apps for HTML5.
+- Similarly one can use other App42 BPaaS services like File Upload, Gaming, NoSQL Storage to make user engaging social Apps for HTML5.
 
 
-Third Party binaries and respective licenses used in App42 SDK are listed below
+Third Party binaries and respective licenses used in App42 BPaaS SDK are listed below
 
 Dr Alexander J Turner
 ----------------------
