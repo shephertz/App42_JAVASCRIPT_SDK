@@ -32,4 +32,4 @@ ul, ul li { list-style-type:none; }
 .success { color: #4F8A10; background-color: #DFF2BF; }
 .warning { color: #9F6000; background-color: #FEEFB3; }
 .error { color: #D8000C; background-color: #FFBABA; }
-.createBtn { background-image: url(../images/a.jpg); background-repeat: repeat-x; color: #626262; width:170px; height:43px; border:none!important; cursor:pointer; color:#fff; font-size:14px; font-family:Arial, Helvetica, sans-serif; }
+.createBtn { background-image: url(../images/b.jpg); background-repeat: repeat-x; color: #626262; width:170px; height:43px; border:none!important; cursor:pointer; color:#fff; font-size:14px; font-family:Arial, Helvetica, sans-serif; }
