@@ -1,7 +1,7 @@
 App42_BPaaS_JavaScript_SDK
 ====================
 
-App42 BPaaS Cloud API Client SDK files for JavaScript
+App42 BPaaS Cloud API Client SDK for JavaScript
 
 - Download the App42 BPaaS Java Script SDK
 - Unzip the file and copy App42-BPaaS-all-x.x.x.min to your project  source.
@@ -27,14 +27,17 @@ var userService = new App42User();
 - Now one can call associated method of that service e.g. user creation can be done with the following snippet
 
 ```
-var userName = "Nick",
-password = "*********",
-email = "nick@shephertz.co.in";
-userService.createUser(userName, password, email,{
-success: function(object) {
-// Callback for Success },
-error: function(error) {
-    // Callback for error }
+var userName = "<Enter your username>",
+password = "<Enter your password>",
+emailId = "<Enter your emailId>";
+user.createUser(userName, password, emailId,
+{
+	success: function(object) {
+	 // Callback for Success 
+	},
+    error: function(error) {
+   // Callback for error 
+	}
 });
 ```
 
