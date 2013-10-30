@@ -1,4 +1,4 @@
-App42_BPAAS_JAVASCRIPT_SDK
+App42_BPaaS_JavaScript_SDK
 ====================
 
 App42 BPaaS Cloud API Client SDK files for JavaScript
