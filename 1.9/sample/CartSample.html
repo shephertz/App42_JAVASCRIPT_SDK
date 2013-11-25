@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>App42 Cart Sample </title>
+        <link href="../css/create_user_style.css" rel="stylesheet" type="text/css" />
+		<link href="../css/jqueryAlert.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript" src="../App42-all-1.9.min.js"></script>
+        <script type="text/javascript" src="../jqueryAlert.js"></script>
+        <script>
+		
+		App42.initialize("YOUR_API_KEY","YOUR_SECRET_KEY");
+	
+          
+        function createCart(){
+                var cartService  = new App42Cart(),
+				userName = "Nick"+ new Date().getTime();
+                cartService.createCart(userName,{
+                    success: function(object) {
+                        $(".success").show();
+								var cart = JSON.parse(object)
+								$('#success').html("createCart");
+								jAlert('Cart has been successfully created',"Cart Service");
+								console.log(cart)
+                    },
+                    error: function(error) {
+
+                    }
+                }); 
+            }	
+			function getCartDetails(){
+               var cartService  = new App42Cart(),
+				userName = "Nick"+ new Date().getTime();
+                cartService.createCart(userName,{
+                    success: function(object) {
+                        cartService.getCartDetails(JSON.parse(object).app42.response.carts.cart.cartId,{
+                            success: function(object) {
+                                $(".success").show();
+								var userobj = JSON.parse(object)
+								$('#success').html("getCartDetails");
+								jAlert('Cart details has been successfully fetch',"Cart Service");
+								console.log(userobj)
+                    },
+                            error: function(error) {
+                               
+                            }
+                        }); 
+                    },
+                    error: function(error) {
+                     
+                    }
+                }); 
+            }
+			function addItem(){
+                var cartService  = new App42Cart(),
+				userName = "Nick"+ new Date().getTime(),
+                itemId = "itemId",
+                itemQuantity = 5,
+                price = 1;
+                cartService.createCart(userName,{
+                     success: function(object) {
+                        cartService.addItem(JSON.parse(object).app42.response.carts.cart.cartId,itemId,itemQuantity,price,{
+                            success: function(object) {
+                                 $(".success").show();
+								var cartobj = JSON.parse(object)
+								$('#success').html("addItem");
+								jAlert('Item has been successfully added into cart',"Cart Service");
+								console.log(cartobj)
+							},
+                            error: function(error) {
+                                
+                            }
+                        }); 
+                    },
+                    error: function(error) {
+                     
+                    }
+                }); 
+            }
+			function getItems(){
+                var cartService  = new App42Cart(),
+				userName = "Nick"+ new Date().getTime();
+                itemId = "itemId",
+                itemQuantity = 5,
+                price = 1;
+                cartService.createCart(userName,{
+                    success: function(object) {
+                         cartService.addItem(JSON.parse(object).app42.response.carts.cart.cartId,itemId,itemQuantity,price,{
+                            success: function(object) {
+							cartService.getItems(JSON.parse(object).app42.response.carts.cart.cartId,{
+							   success: function(object) {
+									 $(".success").show();
+									var cartobj = JSON.parse(object)
+									$('#success').html("getItems");
+									jAlert('Items has been successfully fethed',"Cart Service");
+									console.log(cartobj)
+								},
+									error: function(error) {
+									   
+									}
+								}); 
+							},
+						error: function(error) {
+							
+						}
+					}); 
+				},
+                    error: function(error) {
+                        
+                    }
+                }); 
+            }
+			function getItem(){
+               var cartService  = new App42Cart(),
+				userName = "Nick"+ new Date().getTime(),
+				itemId = "itemId",
+                itemQuantity = 5,
+                price = 1;
+                cartService.createCart(userName,{
+                    success: function(object) {
+                         cartService.addItem(JSON.parse(object).app42.response.carts.cart.cartId,itemId,itemQuantity,price,{
+                            success: function(object) {
+								cartService.getItem(JSON.parse(object).app42.response.carts.cart.cartId,itemId,{
+									success: function(object) {
+										 $(".success").show();
+										var cartobj = JSON.parse(object)
+										$('#success').html("getItem");
+										jAlert('Cart item has been successfully fetched',"Cart Service");
+										console.log(cartobj)
+									},
+									error: function(error) {
+									   
+									}
+								}); 
+							},
+							error: function(error) {
+							
+							}
+						}); 
+					},
+                    error: function(error) {
+                    
+                    }
+                }); 
+            }
+			function isEmpty(){
+                var cartService  = new App42Cart(),
+				userName = "Nick"+ new Date().getTime();
+                cartService.createCart(userName,{
+                    success: function(object) {
+                        cartService.isEmpty(JSON.parse(object).app42.response.carts.cart.cartId,{
+                            success: function(object) {
+                                 $(".success").show();
+								var cartobj = JSON.parse(object)
+								$('#success').html("isEmpty");
+								jAlert('Cart is empty now.',"Cart Service");
+								console.log(cartobj)
+							},
+                            error: function(error) {
+
+                            }
+                        }); 
+                    },
+                    error: function(error) {
+                        
+                    }
+                }); 
+            }
+		 function checkOut(){
+                var cartService  = new App42Cart(),
+				userName = "Nick"+ new Date().getTime(),
+				itemId = "itemId",
+                itemQuantity = 5,
+                price = 1;
+                cartService.createCart(userName,{
+                    success: function(object) {
+                         cartService.addItem(JSON.parse(object).app42.response.carts.cart.cartId,itemId,itemQuantity,price,{
+							success: function(object) {
+								cartService.checkOut(JSON.parse(object).app42.response.carts.cart.cartId,{
+									success: function(object) {
+										 $(".success").show();
+										var cartobj = JSON.parse(object)
+										$('#success').html("Checkout");
+										jAlert('Cart is checkout now.',"Cart Service");
+										console.log(cartobj)
+									},
+									error: function(error) {
+
+									}
+								}); 
+							},
+							error: function(error) {
+
+							}
+						}); 
+					},
+                    error: function(error) {
+                        
+                    }
+                }); 
+            }
+			
+		 function payment(){
+                var cartService  = new App42Cart(),
+				userName = "Nick"+ new Date().getTime(),
+				itemId = "itemId",
+                itemQuantity = 5,
+                price = 1;
+                cartService.createCart(userName,{
+                    success: function(object) {
+                         cartService.addItem(JSON.parse(object).app42.response.carts.cart.cartId,itemId,itemQuantity,price,{
+							success: function(object) {
+								cartService.checkOut(JSON.parse(object).app42.response.carts.cart.cartId,{
+									success: function(object) {
+										cartService.payment(JSON.parse(object).app42.response.carts.cart.cartId,itemId,"AUTHORIZED",{
+											success: function(object) {
+												 $(".success").show();
+												var cartobj = JSON.parse(object)
+												$('#success').html("payment");
+												jAlert('Cart is now ready for payment.',"Cart Service");
+												console.log(cartobj)
+											},
+											error: function(error) {
+
+											}
+										}); 
+									},
+									error: function(error) {
+
+									}
+								}); 
+							},
+							error: function(error) {
+
+							}
+						}); 
+					},
+                    error: function(error) {
+                        
+                    }
+                }); 
+            }
+			
+			function getPaymentsByUser(){
+                var cartService  = new App42Cart(),
+				userName = "Nick"+ new Date().getTime(),
+				itemId = "itemId",
+                itemQuantity = 5,
+                price = 1;
+                cartService.createCart(userName,{
+                    success: function(object) {
+                         cartService.addItem(JSON.parse(object).app42.response.carts.cart.cartId,itemId,itemQuantity,price,{
+							success: function(object) {
+								cartService.checkOut(JSON.parse(object).app42.response.carts.cart.cartId,{
+									success: function(object) {
+										cartService.payment(JSON.parse(object).app42.response.carts.cart.cartId,itemId,"AUTHORIZED",{
+											success: function(object) {
+												cartService.getPaymentsByUser(userName,{
+													success: function(object) {
+														 $(".success").show();
+														var cartobj = JSON.parse(object)
+														$('#success').html("getPaymentsByUser");
+														jAlert('Payment of the User is successfully fetched.',"Cart Service");
+														console.log(cartobj)
+													},
+													error: function(error) {
+													}
+												}); 
+											},
+											error: function(error) {
+
+											}
+										}); 
+									},
+									error: function(error) {
+
+									}
+								}); 
+							},
+							error: function(error) {
+
+							}
+						}); 
+					},
+                    error: function(error) {
+                        
+                    }
+                }); 
+            }
+			function getPaymentByCart(){
+                var cartService  = new App42Cart(),
+				userName = "Nick"+ new Date().getTime(),
+				itemId = "itemId",
+                itemQuantity = 5,
+                price = 1;
+                cartService.createCart(userName,{
+                    success: function(object) {
+                         cartService.addItem(JSON.parse(object).app42.response.carts.cart.cartId,itemId,itemQuantity,price,{
+							success: function(object) {
+								cartService.checkOut(JSON.parse(object).app42.response.carts.cart.cartId,{
+									success: function(object) {
+										cartService.payment(JSON.parse(object).app42.response.carts.cart.cartId,itemId,"AUTHORIZED",{
+											success: function(object) {
+												cartService.getPaymentByCart(JSON.parse(object).app42.response.carts.cart.cartId,{
+													success: function(object) {
+														 $(".success").show();
+														var cartobj = JSON.parse(object)
+														$('#success').html("getPaymentByCart");
+														jAlert('Payment of the Cart is successfully fetched.',"Cart Service");
+														console.log(cartobj)
+													},
+													error: function(error) {
+													}
+												}); 
+											},
+											error: function(error) {
+
+											}
+										}); 
+									},
+									error: function(error) {
+
+									}
+								}); 
+							},
+							error: function(error) {
+
+							}
+						}); 
+					},
+                    error: function(error) {
+                        
+                    }
+                }); 
+            }
+			
+			function getPaymentsByUserAndStatus(){
+                var cartService  = new App42Cart(),
+				userName = "Nick"+ new Date().getTime(),
+				itemId = "itemId",
+                itemQuantity = 5,
+                price = 1;
+                cartService.createCart(userName,{
+                    success: function(object) {
+                         cartService.addItem(JSON.parse(object).app42.response.carts.cart.cartId,itemId,itemQuantity,price,{
+							success: function(object) {
+								cartService.checkOut(JSON.parse(object).app42.response.carts.cart.cartId,{
+									success: function(object) {
+										cartService.payment(JSON.parse(object).app42.response.carts.cart.cartId,itemId,"AUTHORIZED",{
+											success: function(object) {
+												cartService.getPaymentsByUserAndStatus(userName,"AUTHORIZED",{
+													success: function(object) {
+														 $(".success").show();
+														var cartobj = JSON.parse(object)
+														$('#success').html("getPaymentsByUserAndStatus");
+														jAlert('Payment of the User is successfully fetched.',"Cart Service");
+														console.log(cartobj)
+													},
+													error: function(error) {
+													}
+												}); 
+											},
+											error: function(error) {
+
+											}
+										}); 
+									},
+									error: function(error) {
+
+									}
+								}); 
+							},
+							error: function(error) {
+
+							}
+						}); 
+					},
+                    error: function(error) {
+                        
+                    }
+                }); 
+            }
+			
+			function getPaymentsByStatus(){
+                var cartService  = new App42Cart(),
+				userName = "Nick"+ new Date().getTime(),
+				itemId = "itemId",
+                itemQuantity = 5,
+                price = 1;
+                cartService.createCart(userName,{
+                    success: function(object) {
+                         cartService.addItem(JSON.parse(object).app42.response.carts.cart.cartId,itemId,itemQuantity,price,{
+							success: function(object) {
+								cartService.checkOut(JSON.parse(object).app42.response.carts.cart.cartId,{
+									success: function(object) {
+										cartService.payment(JSON.parse(object).app42.response.carts.cart.cartId,itemId,"AUTHORIZED",{
+											success: function(object) {
+												cartService.getPaymentsByStatus("AUTHORIZED",{
+													success: function(object) {
+														 $(".success").show();
+														var cartobj = JSON.parse(object)
+														$('#success').html("getPaymentsByStatus");
+														jAlert('Payment of the User is successfully fetched.',"Cart Service");
+														console.log(cartobj)
+													},
+													error: function(error) {
+													}
+												}); 
+											},
+											error: function(error) {
+
+											}
+										}); 
+									},
+									error: function(error) {
+
+									}
+								}); 
+							},
+							error: function(error) {
+
+							}
+						}); 
+					},
+                    error: function(error) {
+                        
+                    }
+                }); 
+            }
+			
+			function getUserPaymentHistory(){
+                var cartService  = new App42Cart(),
+				userName = "Nick"+ new Date().getTime(),
+				itemId = "itemId",
+                itemQuantity = 5,
+                price = 1;
+                cartService.createCart(userName,{
+                    success: function(object) {
+                         cartService.addItem(JSON.parse(object).app42.response.carts.cart.cartId,itemId,itemQuantity,price,{
+							success: function(object) {
+								cartService.checkOut(JSON.parse(object).app42.response.carts.cart.cartId,{
+									success: function(object) {
+										cartService.payment(JSON.parse(object).app42.response.carts.cart.cartId,itemId,"AUTHORIZED",{
+											success: function(object) {
+												cartService.getPaymentHistoryByUser(userName,{
+													success: function(object) {
+														 $(".success").show();
+														var cartobj = JSON.parse(object)
+														$('#success').html("getUserPaymentHistory");
+														jAlert('Payment history of the User is successfully fetched.',"Cart Service");
+														console.log(cartobj)
+													},
+													error: function(error) {
+													}
+												}); 
+											},
+											error: function(error) {
+
+											}
+										}); 
+									},
+									error: function(error) {
+
+									}
+								}); 
+							},
+							error: function(error) {
+
+							}
+						}); 
+					},
+                    error: function(error) {
+                        
+                    }
+                }); 
+            }
+				
+			function getPaymentHistoryAll(){
+                var cartService  = new App42Cart(),
+				userName = "Nick"+ new Date().getTime(),
+				itemId = "itemId",
+                itemQuantity = 5,
+                price = 1;
+                cartService.createCart(userName,{
+                    success: function(object) {
+                         cartService.addItem(JSON.parse(object).app42.response.carts.cart.cartId,itemId,itemQuantity,price,{
+							success: function(object) {
+								cartService.checkOut(JSON.parse(object).app42.response.carts.cart.cartId,{
+									success: function(object) {
+										cartService.payment(JSON.parse(object).app42.response.carts.cart.cartId,itemId,"AUTHORIZED",{
+											success: function(object) {
+												cartService.getPaymentHistoryAll({
+													success: function(object) {
+														 $(".success").show();
+														var cartobj = JSON.parse(object)
+														$('#success').html("getPaymentHistoryAll");
+														jAlert('Payment history is successfully fetched.',"Cart Service");
+														console.log(cartobj)
+													},
+													error: function(error) {
+													}
+												}); 
+											},
+											error: function(error) {
+
+											}
+										}); 
+									},
+									error: function(error) {
+
+									}
+								}); 
+							},
+							error: function(error) {
+
+							}
+						}); 
+					},
+                    error: function(error) {
+                        
+                    }
+                }); 
+            }
+			
+			function increaseQuantity(){
+                var cartService  = new App42Cart(),
+				userName = "Nick"+ new Date().getTime();
+                itemId = "itemId",
+                itemQuantity = 5,
+                price = 1;
+                cartService.createCart(userName,{
+                    success: function(object) {
+                         cartService.addItem(JSON.parse(object).app42.response.carts.cart.cartId,itemId,itemQuantity,price,{
+                            success: function(object) {
+							cartService.increaseQuantity(JSON.parse(object).app42.response.carts.cart.cartId,itemId,itemQuantity,{
+							   success: function(object) {
+									 $(".success").show();
+									var cartobj = JSON.parse(object)
+									$('#success').html("increaseQuantity");
+									jAlert('Quantity has been successfully increased',"Cart Service");
+									console.log(cartobj)
+								},
+									error: function(error) {
+									   
+									}
+								}); 
+							},
+						error: function(error) {
+							
+						}
+					}); 
+				},
+                    error: function(error) {
+                        
+                    }
+                }); 
+            }
+			
+			function decreaseQuantity(){
+                var cartService  = new App42Cart(),
+				userName = "Nick"+ new Date().getTime();
+                itemId = "itemId",
+                itemQuantity = 5,
+                price = 1;
+                cartService.createCart(userName,{
+                    success: function(object) {
+                         cartService.addItem(JSON.parse(object).app42.response.carts.cart.cartId,itemId,itemQuantity,price,{
+                            success: function(object) {
+							cartService.decreaseQuantity(JSON.parse(object).app42.response.carts.cart.cartId,itemId,itemQuantity,{
+							   success: function(object) {
+									 $(".success").show();
+									var cartobj = JSON.parse(object)
+									$('#success').html("decreaseQuantity");
+									jAlert('Quantity has been successfully decrease',"Cart Service");
+									console.log(cartobj)
+								},
+									error: function(error) {
+									   
+									}
+								}); 
+							},
+						error: function(error) {
+							
+						}
+					}); 
+				},
+                    error: function(error) {
+                        
+                    }
+                }); 
+            }
+			
+	</script>
+	<body>
+			<div id="header_wrapper">
+				<div id="header_inner">
+					<div id="logo"><a href="http://shephertz.com/api"><img border="0" alt="CloudAPI" src="../images/logo.png"></a></div>
+				</div>
+			</div>
+			<input type = "button" value="createCart" name = "create" class ="createBtn" onclick="createCart();"/>
+			<input type = "button" value="getCartDetails" name = "create"  class ="createBtn" onclick="getCartDetails();"/>
+			<input type = "button" value="addItem" name = "create"  class ="createBtn" onclick="addItem();"/>
+			<input type = "button" value="getItems" name = "create"  class ="createBtn" onclick="getItems();"/>
+			<input type = "button" value="getItem" name = "create"  class ="createBtn" onclick="getItem();"/>
+			<input type = "button" value="isEmpty" name = "create"  class ="createBtn" onclick="isEmpty();"/>
+			<input type = "button" value="checkOut" name = "create"  class ="createBtn" onclick="checkOut();"/>
+			<input type = "button" value="payment" name = "create"  class ="createBtn" onclick="payment();"/>
+			<input type = "button" value="getPaymentsByUser" name = "create"  class ="createBtn" onclick="getPaymentsByUser();"/>
+			<input type = "button" value="getPaymentByCart" name = "create"  class ="createBtn" onclick="getPaymentByCart();"/>
+			<input type = "button" value="getPaymentsByUserAndStatus" name = "create"  class ="createBtn" onclick="getPaymentsByUserAndStatus();"/>
+			<input type = "button" value="getPaymentsByStatus" name = "create"  class ="createBtn" onclick="getPaymentsByStatus();"/>
+			<input type = "button" value="getUserPaymentHistory" name = "create"  class ="createBtn" onclick="getUserPaymentHistory();"/>
+			<input type = "button" value="getPaymentHistoryAll" name = "create"  class ="createBtn" onclick="getPaymentHistoryAll();"/>
+			<input type = "button" value="increaseQuantity" name = "create"  class ="createBtn" onclick="increaseQuantity();"/>
+			<input type = "button" value="decreaseQuantity" name = "create"  class ="createBtn" onclick="decreaseQuantity();"/>
+			<div class="clear"></div>
+        <div id="footer">
+            <div id="copy">Copyright &copy; 2013 ShepHertz Technologies Pvt Ltd. All rights reserved.</div>
+        </div>
+	</body>
+</html>
