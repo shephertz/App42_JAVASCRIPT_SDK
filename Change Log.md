@@ -1,5 +1,5 @@
-* [Release Version 1.9.1](https://github.com/shephertz/App42_JAVASCRIPT_SDK/blob/master/Change%20Log.md#version-19)
-* [Release Version 1.8](https://github.com/shephertz/App42_JAVASCRIPT_SDK/blob/master/Change%20Log.md#version-18)
+* [Release Version 1.9.1](https://github.com/shephertz/App42_JAVASCRIPT_SDK/blob/master/Change%20Log.md#version-191)
+* [Release Version 1.9](https://github.com/shephertz/App42_JAVASCRIPT_SDK/blob/master/Change%20Log.md#version-19)
 
 ## Version 1.9.1
 
