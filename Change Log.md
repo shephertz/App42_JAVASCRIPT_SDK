@@ -7,6 +7,13 @@
 
 **Release Version:** 1.9.1
 
+
+**The following features have been pushed :**
+
+```
+Set logged in user
+```
+
 **The following features have been pushed to the storage service :**
 
 ```
