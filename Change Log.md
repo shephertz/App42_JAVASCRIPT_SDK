@@ -14,16 +14,10 @@
 Push Notification Service
 ```
 
-**The following features have been pushed to the storage service :**
-
-```
-saveOrUpdateDocumentByKeyValue
-```
-
 **This release contains the following bug fix:**
 
 ```
-Bux fix of setEvent in LogService
+None
 ```
 
 
