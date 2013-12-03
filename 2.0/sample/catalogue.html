@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html>
+     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>App42 Game Sample </title>
+        <link href="../css/create_user_style.css" rel="stylesheet" type="text/css" />
+		<link href="../css/jqueryAlert.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript" src="../App42-all-2.0.min.js"></script>
+        <script type="text/javascript" src="../jqueryAlert.js"></script>
+
+        <script>
+	
+          App42.initialize("YOUR_API_KEY","YOUR_SECRET_KEY");
+	
+            function myProfile(catalogue){
+                var filePath = document.getElementById("filePath");
+                var file = filePath.files[0];
+                catalogue.setItemId("userName");
+                catalogue.setDescription("lastName");
+                catalogue.setName("M");
+                catalogue.setPrice(22);
+                catalogue.setImage(file);
+            }
+			
+            function createCatalogue(){
+                var catalogue  = new App42Catalogue();
+                var catalogueName = "catalogueName"+new Date();
+                var description = "description";
+                var result ;
+                catalogue.createCatalogue(catalogueName,description,{
+                    success: function(object) {
+                        $(".success").show();
+                            var catalogueObj = JSON.parse(object)
+                            $('#success').html("Game created");
+							jAlert('Catalogue has been successfully created',"Catalogue Service");
+							console.log(catalogueObj)
+                    },
+                    error: function(error) {
+
+                    }
+                }); 
+            }
+            
+           
+			
+            function createCategory(){
+                var catalogue  = new App42Catalogue();
+                var catalogueName = "catalogueName"+new Date();
+                var categoryName = "categoryName"+new Date();
+                var description = "description";
+                var result ;
+                catalogue.createCatalogue(catalogueName,description,{
+                    success: function(object) {
+                        catalogue.createCategory(catalogueName,categoryName,description,{
+                            success: function(object) {
+									$(".success").show();
+									var catalogueObj = JSON.parse(object)
+									$('#success').html("Game created");
+									jAlert('Category has been successfully created',"Catalogue Service");
+									console.log(catalogueObj)
+									},
+                            error: function(error) {
+                            }
+                        }); 
+                    },
+                    error: function(error) {
+                    }
+                }); 
+            }
+            
+            
+            function addItem(){
+                var catalogue  = new App42Catalogue();
+                var catalogueName = "catalogueName"+new Date().getTime();
+                var categoryName = "categoryName"+new Date().getTime();
+                var itemId = "itemId"+new Date().getTime();
+                var ItemName = "ItemName "+new Date().getTime();
+                var description = "description";
+                var result ;
+                var itemData = new ItemData(); 
+                var filePath = document.getElementById("filePath");
+                var file = filePath.files[0];
+                itemData.setItemId(itemId);
+                itemData.setDescription("Description 1");
+                itemData.setName(ItemName);
+                itemData.setPrice(20.0);
+                itemData.setImage(file);
+                catalogue.createCatalogue(catalogueName,description,{
+                    success: function(object) {
+                        catalogue.createCategory(catalogueName,categoryName,description,{
+                            success: function(object) {
+                                catalogue.addItem(catalogueName,categoryName,itemData,{
+                                    success: function(object) {
+                                         $(".success").show();
+											var catalogueObj = JSON.parse(object)
+										$('#success').html("Game created");
+										jAlert('item has been successfully added',"Catalogue Service");
+										console.log(catalogueObj)
+								},
+                                    error: function(error) {
+
+                                    }
+                                }); 
+                            },
+                            error: function(error) {
+
+                            }
+                        }); 
+                    },
+                    error: function(error) {
+
+                    }
+                }); 
+            }
+            
+           
+			
+            function getItems(){
+                var catalogue  = new App42Catalogue();
+                var catalogueName = "catalogueName"+new Date().getTime();
+                var categoryName = "categoryName"+new Date().getTime();
+                var itemId = "itemId"+new Date().getTime();
+                var ItemName = "ItemName "+new Date().getTime();
+                var description = "description";
+                var result ;
+                var itemData = new ItemData(); 
+                var filePath = document.getElementById("filePath");
+                var file = filePath.files[0];
+                itemData.setItemId(itemId);
+                itemData.setDescription("Description 1");
+                itemData.setName(ItemName);
+                itemData.setPrice(20.0);
+                itemData.setImage(file);
+                catalogue.createCatalogue(catalogueName,description,{
+                    success: function(object) {
+                        catalogue.createCategory(catalogueName,categoryName,description,{
+                            success: function(object) {
+                                catalogue.addItem(catalogueName,categoryName,itemData,{
+                                    success: function(object) {
+                                        catalogue.getItems(catalogueName,{
+                                            success: function(object) {
+                                                  $(".success").show();
+													var catalogueObj = JSON.parse(object)
+													$('#success').html("Game created");
+												jAlert('item has been successfully fetched',"Catalogue Service");
+												console.log(catalogueObj)
+												},
+                                            error: function(error) {
+                                            }
+                                        }); 
+                                    },
+                                    error: function(error) {
+
+                                    }
+                                }); 
+                            },
+                            error: function(error) {
+
+                            }
+                        }); 
+                    },
+                    error: function(error) {
+
+                    }
+                }); 
+            }
+            
+            
+			
+            function getItemsByCategory(){
+                var catalogue  = new App42Catalogue();
+                var catalogueName = "catalogueName"+new Date().getTime();
+                var categoryName = "categoryName"+new Date().getTime();
+                var itemId = "itemId"+new Date().getTime();
+                var ItemName = "ItemName "+new Date().getTime();
+                var description = "description";
+                var result ;
+                var itemData = new ItemData(); 
+                var filePath = document.getElementById("filePath");
+                var file = filePath.files[0];
+                itemData.setItemId(itemId);
+                itemData.setDescription("Description 1");
+                itemData.setName(ItemName);
+                itemData.setPrice(20.0);
+                itemData.setImage(file);
+                catalogue.createCatalogue(catalogueName,description,{
+                    success: function(object) {
+                        catalogue.createCategory(catalogueName,categoryName,description,{
+                            success: function(object) {
+                                catalogue.addItem(catalogueName,categoryName,itemData,{
+                                    success: function(object) {
+                                        catalogue.getItemsByCategory(catalogueName,categoryName,{
+                                            success: function(object) {
+                                                 $(".success").show();
+													var catalogueObj = JSON.parse(object)
+													$('#success').html("Game created");
+												jAlert('item by category has been successfully fetched',"Catalogue Service");
+												console.log(catalogueObj)
+												},
+                                            error: function(error) {
+
+                                            }
+                                        }); 
+                                    },
+                                    error: function(error) {
+
+                                    }
+                                }); 
+                            },
+                            error: function(error) {
+
+                            }
+                        }); 
+                    },
+                    error: function(error) {
+
+                    }
+                }); 
+            }
+            
+           
+			
+            function getItemsByCategoryWithPaging(){
+                var catalogue  = new App42Catalogue();
+                var catalogueName = "catalogueName"+new Date().getTime();
+                var categoryName = "categoryName"+new Date().getTime();
+                var itemId = "itemId"+new Date().getTime();
+                var itemId1 = "itemId1"+new Date().getTime();
+                var ItemName = "ItemName "+new Date().getTime();
+                 var ItemName1 = "ItemName1 "+new Date().getTime();
+                var description = "description";
+                var result ;
+                var max = 2;
+                var offset = 1;
+                var itemData = new ItemData(); 
+                var filePath = document.getElementById("filePath");
+                var file = filePath.files[0];
+                itemData.setItemId(itemId);
+                itemData.setDescription("Description 1");
+                itemData.setName(ItemName);
+                itemData.setPrice(20.0);
+                itemData.setImage(file);
+                
+                var itemData1 = new ItemData(); 
+                var filePath = document.getElementById("filePath");
+                var file = filePath.files[0];
+                itemData1.setItemId(itemId1);
+                itemData1.setDescription("Description 1");
+                itemData1.setName(ItemName1);
+                itemData1.setPrice(20.0);
+                itemData1.setImage(file);
+                
+                catalogue.createCatalogue(catalogueName,description,{
+                    success: function(object) {
+                        catalogue.createCategory(catalogueName,categoryName,description,{
+                            success: function(object) {
+                                catalogue.addItem(catalogueName,categoryName,itemData,{
+                                    success: function(object) {
+                                        catalogue.addItem(catalogueName,categoryName,itemData1,{
+                                    success: function(object) {
+                                        catalogue.getItemsByCategoryWithPaging(catalogueName,categoryName,max,offset,{
+                                               success: function(object) {
+                                                 $(".success").show();
+													var catalogueObj = JSON.parse(object)
+													$('#success').html("Game created");
+													jAlert('item by category has been successfully fetched',"Catalogue Service");
+													console.log(catalogueObj)
+												},
+                                            error: function(error) {
+
+                                            }
+                                        }); 
+                                    },
+                                    error: function(error) {
+
+                                    }
+                                }); 
+                            },
+                            error: function(error) {
+
+                            }
+                        }); 
+                    },
+                    error: function(error) {
+
+                    }
+                }); 
+            },
+            error: function(error) {
+
+                    }
+                }); 
+            }
+            
+            
+			
+            function getItemsCountByCategory(){
+                var catalogue  = new App42Catalogue();
+                var catalogueName = "catalogueName"+new Date().getTime();
+                var categoryName = "categoryName"+new Date().getTime();
+                var itemId = "itemId"+new Date().getTime();
+                var ItemName = "ItemName "+new Date().getTime();
+                var description = "description";
+                var result ;
+                var itemData = new ItemData(); 
+                var filePath = document.getElementById("filePath");
+                var file = filePath.files[0];
+                itemData.setItemId(itemId);
+                itemData.setDescription("Description 1");
+                itemData.setName(ItemName);
+                itemData.setPrice(20.0);
+                itemData.setImage(file);
+                catalogue.createCatalogue(catalogueName,description,{
+                    success: function(object) {
+                        catalogue.createCategory(catalogueName,categoryName,description,{
+                            success: function(object) {
+                                catalogue.addItem(catalogueName,categoryName,itemData,{
+                                    success: function(object) {
+                                        catalogue.getItemsCountByCategory(catalogueName,categoryName,{
+                                            success: function(object) {
+                                                    $(".success").show();
+													var catalogueObj = JSON.parse(object)
+													$('#success').html("Game created");
+													jAlert('item count by category has been successfully fetched',"Catalogue Service");
+													console.log(catalogueObj)
+												},
+                                            error: function(error) {
+
+                                            }
+                                        }); 
+                                    },
+                                    error: function(error) {
+
+                                    }
+                                }); 
+                            },
+                            error: function(error) {
+
+                            }
+                        }); 
+                    },
+                    error: function(error) {
+
+                    }
+                }); 
+            }
+            
+           
+			
+            function getItemById(){
+                var catalogue  = new App42Catalogue();
+                var catalogueName = "catalogueName"+new Date().getTime();
+                var categoryName = "categoryName"+new Date().getTime();
+                var itemId = "itemId"+new Date().getTime();
+                var ItemName = "ItemName "+new Date().getTime();
+                var description = "description";
+                var result ;
+                var itemData = new ItemData(); 
+                var filePath = document.getElementById("filePath");
+                var file = filePath.files[0];
+                itemData.setItemId(itemId);
+                itemData.setDescription("Description 1");
+                itemData.setName(ItemName);
+                itemData.setPrice(20.0);
+                itemData.setImage(file);
+                catalogue.createCatalogue(catalogueName,description,{
+                    success: function(object) {
+                        catalogue.createCategory(catalogueName,categoryName,description,{
+                            success: function(object) {
+                                catalogue.addItem(catalogueName,categoryName,itemData,{
+                                    success: function(object) {
+                                        catalogue.getItemById(catalogueName,categoryName,itemId,{
+                                            success: function(object) {
+                                                $(".success").show();
+													var catalogueObj = JSON.parse(object)
+													$('#success').html("Game created");
+													jAlert('item by id has been successfully fetched',"Catalogue Service");
+													console.log(catalogueObj)
+												},
+                                            error: function(error) {
+
+                                            }
+                                        }); 
+                                    },
+                                    error: function(error) {
+
+                                    }
+                                }); 
+                            },
+                            error: function(error) {
+
+                            }
+                        }); 
+                    },
+                    error: function(error) {
+
+                    }
+                }); 
+            }
+            
+			
+            function removeAllItems(){
+                var catalogue  = new App42Catalogue();
+                var catalogueName = "catalogueName"+new Date().getTime();
+                var categoryName = "categoryName"+new Date().getTime();
+                var itemId = "itemId"+new Date().getTime();
+                var ItemName = "ItemName "+new Date().getTime();
+                var description = "description";
+                var result ;
+                var itemData = new ItemData(); 
+                var filePath = document.getElementById("filePath");
+                var file = filePath.files[0];
+                itemData.setItemId(itemId);
+                itemData.setDescription("Description 1");
+                itemData.setName(ItemName);
+                itemData.setPrice(20.0);
+                itemData.setImage(file);
+                catalogue.createCatalogue(catalogueName,description,{
+                    success: function(object) {
+                        catalogue.createCategory(catalogueName,categoryName,description,{
+                            success: function(object) {
+                                catalogue.addItem(catalogueName,categoryName,itemData,{
+                                    success: function(object) {
+                                        catalogue.removeAllItems(catalogueName,{
+                                            success: function(object) {
+                                                $(".success").show();
+													var catalogueObj = JSON.parse(object)
+													$('#success').html("Game created");
+													jAlert('All item has been successfully removed',"Catalogue Service");
+													console.log(catalogueObj)
+												},
+                                            error: function(error) {
+
+                                            }
+                                        }); 
+                                    },
+                                    error: function(error) {
+
+                                    }
+                                }); 
+                            },
+                            error: function(error) {
+
+                            }
+                        }); 
+                    },
+                    error: function(error) {
+
+                    }
+                }); 
+            }
+		
+            function removeItemsByCategory(){
+                var catalogue  = new App42Catalogue();
+                var catalogueName = "catalogueName"+new Date().getTime();
+                var categoryName = "categoryName"+new Date().getTime();
+                var itemId = "itemId"+new Date().getTime();
+                var ItemName = "ItemName "+new Date().getTime();
+                var description = "description";
+                var result ;
+                var itemData = new ItemData(); 
+                var filePath = document.getElementById("filePath");
+                var file = filePath.files[0];
+                itemData.setItemId(itemId);
+                itemData.setDescription("Description 1");
+                itemData.setName(ItemName);
+                itemData.setPrice(20.0);
+                itemData.setImage(file);
+                catalogue.createCatalogue(catalogueName,description,{
+                    success: function(object) {
+                        catalogue.createCategory(catalogueName,categoryName,description,{
+                            success: function(object) {
+                                catalogue.addItem(catalogueName,categoryName,itemData,{
+                                    success: function(object) {
+                                        catalogue.removeItemsByCategory(catalogueName,categoryName,{
+                                            success: function(object) {
+                                                 $(".success").show();
+													var catalogueObj = JSON.parse(object)
+													$('#success').html("Game created");
+													jAlert('Item by category has been successfully removed',"Catalogue Service");
+													console.log(catalogueObj)
+												},
+                                            error: function(error) {
+                                            }
+                                        }); 
+                                    },
+                                    error: function(error) {
+                                    }
+                                }); 
+                            },
+                            error: function(error) {
+                            }
+                        }); 
+                    },
+                    error: function(error) {
+                    }
+                }); 
+            }
+		
+              
+                
+            function removeItemById(){
+                var catalogue  = new App42Catalogue();
+                var catalogueName = "catalogueName"+new Date().getTime();
+                var categoryName = "categoryName"+new Date().getTime();
+                var itemId = "itemId"+new Date().getTime();
+                var ItemName = "ItemName "+new Date().getTime();
+                var description = "description";
+                var result ;
+                var itemData = new ItemData(); 
+                var filePath = document.getElementById("filePath");
+                var file = filePath.files[0];
+                itemData.setItemId(itemId);
+                itemData.setDescription("Description 1");
+                itemData.setName(ItemName);
+                itemData.setPrice(20.0);
+                itemData.setImage(file);
+                catalogue.createCatalogue(catalogueName,description,{
+                    success: function(object) {
+                        catalogue.createCategory(catalogueName,categoryName,description,{
+                            success: function(object) {
+                                catalogue.addItem(catalogueName,categoryName,itemData,{
+                                    success: function(object) {
+                                        catalogue.removeItemById(catalogueName,categoryName,itemId,{
+                                            success: function(object) {
+                                                $(".success").show();
+													var catalogueObj = JSON.parse(object)
+													$('#success').html("Game created");
+													jAlert('Item by id has been successfully removed',"Catalogue Service");
+													console.log(catalogueObj)
+												},
+                                            error: function(error) {
+
+                                            }
+                                        }); 
+                                    },
+                                    error: function(error) {
+
+                                    }
+                                }); 
+                            },
+                            error: function(error) {
+
+                            }
+                        }); 
+                    },
+                    error: function(error) {
+
+                    }
+                }); 
+            }
+            
+         
+            function deleteCategory(){
+                var catalogue  = new App42Catalogue();
+                var catalogueName = "catalogueName"+new Date().getTime();
+                var categoryName = "categoryName"+new Date().getTime();
+                var itemId = "itemId"+new Date().getTime();
+                var ItemName = "ItemName "+new Date().getTime();
+                var description = "description";
+                var result ;
+                var itemData = new ItemData(); 
+                var filePath = document.getElementById("filePath");
+                var file = filePath.files[0];
+                itemData.setItemId(itemId);
+                itemData.setDescription("Description 1");
+                itemData.setName(ItemName);
+                itemData.setPrice(20.0);
+                itemData.setImage(file);
+                catalogue.createCatalogue(catalogueName,description,{
+                    success: function(object) {
+                        catalogue.createCategory(catalogueName,categoryName,description,{
+                            success: function(object) {
+                                catalogue.addItem(catalogueName,categoryName,itemData,{
+                                    success: function(object) {
+                                        catalogue.deleteCategory(catalogueName,categoryName,{
+                                            success: function(object) {
+                                                 $(".success").show();
+													var catalogueObj = JSON.parse(object)
+													$('#success').html("Game created");
+													jAlert('Category has been successfully deleted',"Catalogue Service");
+													console.log(catalogueObj)
+												},
+                                            error: function(error) {
+
+                                            }
+                                        }); 
+                                    },
+                                    error: function(error) {
+
+                                    }
+                                }); 
+                            },
+                            error: function(error) {
+
+                            }
+                        }); 
+                    },
+                    error: function(error) {
+
+                    }
+                }); 
+            }
+           
+			
+      </script>
+    <body>
+		<div id="header_wrapper">
+            <div id="header_inner">
+                <div id="logo"><a href="http://shephertz.com/api"><img border="0" alt="CloudAPI" src="../images/logo.png"></a></div>
+            </div>
+        </div>
+		<input type="file" name="filePath" id="filePath"class ="input_box" onfocus="if(this.value=='File Path'){this.value=''};" onblur="if(this.value==''){this.value='File Path'};" value="File Path">
+		<input type = "button" value="createCatalogue" name = "create" class ="createBtn" onclick="createCatalogue();"/>
+		<input type = "button" value="createCategory" name = "create" class ="createBtn" onclick="createCategory();"/>
+		<input type = "button" value="addItem" name = "create" class ="createBtn" onclick="addItem();"/>
+		<input type = "button" value="getItems" name = "create" class ="createBtn" onclick="getItems();"/>
+		<input type = "button" value="getItemsByCategory" name = "create"  class ="createBtn"onclick="getItemsByCategory();"/>
+		<input type = "button" value="getItemsByCategoryWithPaging" name = "create"  class ="createBtn"onclick="getItemsByCategoryWithPaging();"/>
+		<input type = "button" value="getItemsCountByCategory" name = "create"  class ="createBtn"onclick="getItemsCountByCategory();"/>
+		<input type = "button" value="getItemById" name = "create"  class ="createBtn"onclick="getItemById();"/>
+		<input type = "button" value="removeAllItems" name = "create"  class ="createBtn"onclick="removeAllItems();"/>
+		<input type = "button" value="removeItemsByCategory" name = "create"  class ="createBtn"onclick="removeItemsByCategory();"/>
+		<input type = "button" value="removeItemById" name = "create"  class ="createBtn"onclick="removeItemById();"/>
+		<input type = "button" value="deleteCategory" name = "create"  class ="createBtn"onclick="deleteCategory();"/>
+		 <div class="clear"></div>
+        <div id="footer">
+            <div id="copy">Copyright &copy; 2013 ShepHertz Technologies Pvt Ltd. All rights reserved.</div>
+        </div>
+		</body>
+		
+</html>
