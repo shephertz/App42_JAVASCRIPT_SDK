@@ -1,0 +1,36 @@
+/*  File Name   : create_user_style.css *   
+	Description : Style Sheet for Create User  *   
+	Author      : Rameshwar Sah  Date: 14th,March,2013  Creation
+*/ 
+
+
+body, div, ul, li, p, a, img, input, h1, h2, h3, h4, h5 { margin:0; padding:0; }
+a:hover, selected, visited { border:none; }
+stextarea:focus, input:focus { outline: none; }
+textarea { outline: none; }
+a { outline: 0; }
+textarea { resize: none; overflow: hidden; }
+ul, ul li { list-style-type:none; }
+.fleft { float:left; }
+.fright { float:right; }
+.clear { clear:both; }
+
+/******************** Create User *********************************/
+#header_wrapper { background-color: #0854A3; float: left; min-width: 1024px; padding: 36px 0; width: 100%;}
+#header_inner { margin: 0 auto; width: 1024px;}
+#logo { float: left;}
+.create_user_wrapper { width:430px; margin:30px auto;}
+.create_user_title { background-image: url("../images/pm_top_h.png"); background-repeat: repeat-x; color: #626262; float: left; font-family: verdana; font-size: 14px; font-weight: bold; height: 32px; padding-top: 13px; text-align: center; width: 430px; }
+.create_user_inner { float: left; width: 408px; padding: 10px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-right-color: #c4c4c4; border-bottom-color: #c4c4c4; border-left-color: #c4c4c4; border-top-color: #c4c4c4; background-color: #FFFFFF; }
+.create_user_form { width:410px; float: left; margin-top: 10px; font-family: Tahoma; font-size: 12px; color: #5a595e; }
+.lable_txt { color:#626262; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; height: 38px; padding-right: 1px; white-space: nowrap; }
+.input_box { width:97%; border: 1px solid #b6b6b6; border-radius:5px; height: 24px; font-family: Verdana, Arial, Helvetica, sans-serif; color: #626262; font-size: 12px; font-weight: bold; padding-top: 4px; padding-left: 5px; }
+#footer { background: none repeat scroll 0 0 #063A73; bottom: 0; float: left; height: 30px; position: fixed; width: 100%;}
+#copy { color: #FFFFFF; font-family: Arial,Helvetica,sans-serif; font-size: 12px; margin: 0 auto; padding-top: 10px; text-align: center; width: 1025px;}
+/******************** Error Msg *********************************/
+.info, .success, .warning, .error, .validation { border: 1px solid; margin: 10px 0px; padding:8px; }
+.info { color: #00529B; background-color: #BDE5F8; }
+.success { color: #4F8A10; background-color: #DFF2BF; }
+.warning { color: #9F6000; background-color: #FEEFB3; }
+.error { color: #D8000C; background-color: #FFBABA; }
+.createBtn { background-image: url(../images/a.jpg); background-repeat: repeat-x; color: #626262; width:170px; height:43px; border:none!important; cursor:pointer; color:#fff; font-size:14px; font-family:Arial, Helvetica, sans-serif; }
