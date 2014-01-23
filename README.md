@@ -1,7 +1,7 @@
 App42_JAVASCRIPT_SDK
 ====================
 
-App42 Cloud API Client SDK JAR files for JavaScript
+App42 Cloud API Client SDK files for JavaScript
 
 1. [Register] (https://apphq.shephertz.com/register) with App42 platform.
 2. Create an app once you are on Quick start page after registration.
