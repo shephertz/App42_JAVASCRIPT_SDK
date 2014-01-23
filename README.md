@@ -3,10 +3,14 @@ App42_JAVASCRIPT_SDK
 
 App42 Cloud API Client SDK JAR files for JavaScript
 
-- Download the latest App42 Java Script SDK
-- Unzip the file and copy App42-all-x.x.x.min.js to your project  source.
+- [Download](https://github.com/shephertz/App42_JAVASCRIPT_SDK/archive/master.zip) the App42 Java Script SDK
+- Unzip the file , unzip file will contain version folder , sample folder amd plugin for android phoneGap push notication.
+- Version folder will contain App42-all-x.x.x.min.js .
 - Add the following script tag in the your html page
-script type="text/javascript" src="App42-all-x.x.x.min.js"
+
+```
+<script type="text/javascript" src="App42-all-x.x.x.min.js"/>
+```
 - Initialize the library using
  
 ```javascript
