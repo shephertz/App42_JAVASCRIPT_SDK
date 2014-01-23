@@ -6,10 +6,10 @@ App42 Cloud API Client SDK files for JavaScript
 1. [Register] (https://apphq.shephertz.com/register) with App42 platform.
 2. Create an app once you are on Quick start page after registration.
 3. If you are already registered, login to [AppHQ] (http://apphq.shephertz.com/register/app42Login) console and create an app from App Manager Tab.
-4 [Download](https://github.com/shephertz/App42_JAVASCRIPT_SDK/archive/master.zip) the App42 Java Script SDK
-5 Unzip the file , unzip file will contain version folder , sample folder and plugin for android phoneGap push notication.
-6 Version folder will contain App42-all-x.x.x.min.js.
-7 Add the following script tag in the your html page
+4. [Download](https://github.com/shephertz/App42_JAVASCRIPT_SDK/archive/master.zip) the App42 Java Script SDK
+5. Unzip the file , unzip file will contain version folder , sample folder and plugin for android phoneGap push notication.
+6. Version folder will contain App42-all-x.x.x.min.js.
+7. Add the following script tag in the your html page
 
 ```
 <script type="text/javascript" src="App42-all-x.x.x.min.js"/>
