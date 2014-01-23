@@ -35,7 +35,7 @@ scheduleMessageToUser
 **REVIEW SERVICE**
 
 ```
-updateDocumentByQuery
+deleteReviewByReviewId
 deleteCommentByCommentId
 ```
 
