@@ -1,3 +1,4 @@
+* [Release Version 2.2](https://github.com/shephertz/App42_JAVASCRIPT_SDK/blob/master/Change%20Log.md#version-22)
 * [Release Version 2.1](https://github.com/shephertz/App42_JAVASCRIPT_SDK/blob/master/Change%20Log.md#version-21)
 * [Release Version 2.0](https://github.com/shephertz/App42_JAVASCRIPT_SDK/blob/master/Change%20Log.md#version-20)
 * [Release Version 1.9.1](https://github.com/shephertz/App42_JAVASCRIPT_SDK/blob/master/Change%20Log.md#version-191)
@@ -6,11 +7,58 @@
 * [Release Version 1.7](https://github.com/shephertz/App42_JAVASCRIPT_SDK/blob/master/Change%20Log.md#version-17)
 
 
+
+## Version 2.2
+
+**Release Date:** 23-01-2014
+
+**Release Version:** 2.2
+
+
+**The following features have been pushed  :**
+
+```
+Meta info in UserService (getUser,getUsersByRole,getUserByEmailId) and ScoreBoardService(getTopNRankers).
+```
+
+
+**The following features have been pushed to the services :**
+
+**PUSH SERVICE**
+
+```
+sendMessageToInActiveUsers
+scheduleMessageToUser
+
+```
+
+**REVIEW SERVICE**
+
+```
+deleteReviewByReviewId
+deleteCommentByCommentId
+```
+
+**SCOREBOARD SERVICE**
+
+```
+getTopNTargetRankers
+getTopNRankersFromFacebook(With specefied dange range)
+```
+
+**This release contains the following bug fix:**
+
+```
+None
+```
+
+
+
 ## Version 2.1
 
 **Release Date:** 03-12-2013
 
-**Release Version:** 2.0
+**Release Version:** 2.1
 
 
 **The following Service have been pushed to the latest :**
