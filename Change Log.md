@@ -22,13 +22,13 @@
 **The following features have been pushed  :**
 
 ```
-If you are upgrading from previous version of App42_JAVA_SDK_2.0 and have used setQuery method on any service, you have to set App42API.setDbName instead of passing it in method parameter.
+If you are upgrading from previous version of App42-all-2.3.min and have used setQuery method on any service, you have to set App42.setDbName instead of passing it in method parameter.
 
 **OlD Code Snippet:
 setQuery("dbName","collectionName","query");
 
 **New Code Snippet :
-App42API.setDbName("dbName");
+App42.setDbName("dbName");
 setQuery("collectionName","query");
 ```
 
