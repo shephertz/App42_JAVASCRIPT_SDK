@@ -1,43 +1,18 @@
-* [Release Version 1.9.1](https://github.com/shephertz/App42_JAVASCRIPT_SDK/blob/1.x/Change%20Log.md#version-191)
-* [Release Version 1.9](https://github.com/shephertz/App42_JAVASCRIPT_SDK/blob/1.x/Change%20Log.md#version-19)
-* [Release Version 1.8](https://github.com/shephertz/App42_JAVASCRIPT_SDK/blob/1.x/Change%20Log.md#version-18)
-* [Release Version 1.7](https://github.com/shephertz/App42_JAVASCRIPT_SDK/blob/1.x/Change%20Log.md#version-17)
-
-## Version 1.9.1
-
-**Release Date:** 25-11-2013
-
-**Release Version:** 1.9.1
+* [Release Version 2.1](https://github.com/shephertz/App42_JAVASCRIPT_SDK/blob/2.x/Change%20Log.md#version-21)
+* [Release Version 2.0](https://github.com/shephertz/App42_JAVASCRIPT_SDK/blob/2.x/Change%20Log.md#version-20)
 
 
-**The following features have been pushed :**
+## Version 2.1
 
-```
-Set logged in user
-```
+**Release Date:** 03-12-2013
 
-**The following features have been pushed to the storage service :**
+**Release Version:** 2.1
 
-```
-saveOrUpdateDocumentByKeyValue
-```
-
-**This release contains the following bug fix:**
-
-```
-Bux fix of setEvent in LogService
-```
-
-## Version 1.9
-
-**Release Date:** 22-10-2013
-
-**Release Version:** 1.9
 
 **The following Service have been pushed to the latest :**
 
 ```
-AB Test Service
+Custom Code Service
 ```
 
 **This release contains the following bug fix:**
@@ -46,47 +21,17 @@ AB Test Service
 None
 ```
 
-## Version 1.8
+## Version 2.0
 
-**Release Date:** 23-09-2013
+**Release Date:** 29-11-2013
 
-**Release Version:** 1.8
+**Release Version:** 2.0
+
 
 **The following Service have been pushed to the latest :**
 
 ```
-Avatar Service
-Achievement Service
-```
-
-**The following features have been pushed to the Social Service :**
-
-```
-facebookPublishStream
-facebookLinkPost
-facebookLinkPostWithCustomThumbnail
-getFacebookProfile
-```
-
-**This release contains the following bug fix:**
-
-```
-None
-```
-
-
-## Version 1.7
-
-**Release Date:** 11-09-2013
-
-**Release Version:** 1.7
-
-**The following Service have been pushed to the latest :**
-
-```
-Cart Service
-Catalogue Service
-ImageProcessor Service
+Push Notification Service
 ```
 
 **This release contains the following bug fix:**
