@@ -1,3 +1,5 @@
+* [Release Version 2.6](https://github.com/shephertz/App42_JAVASCRIPT_SDK/blob/master/Change%20Log.md#version-26)
+* [Release Version 2.5](https://github.com/shephertz/App42_JAVASCRIPT_SDK/blob/master/Change%20Log.md#version-25)
 * [Release Version 2.4](https://github.com/shephertz/App42_JAVASCRIPT_SDK/blob/master/Change%20Log.md#version-24)
 * [Release Version 2.3](https://github.com/shephertz/App42_JAVASCRIPT_SDK/blob/master/Change%20Log.md#version-23)
 * [Release Version 2.2](https://github.com/shephertz/App42_JAVASCRIPT_SDK/blob/master/Change%20Log.md#version-22)
@@ -10,6 +12,56 @@
 
 
 
+## Version 2.6
+
+**Release Date:** 20-06-2014
+
+**Release Version:** 2.6
+
+**The following Services have been pushed to the latest :**
+```
+Timer Service
+Gift Service
+```
+**This release contains the following bug fix:**
+
+```
+None
+```
+
+
+## Version 2.5
+
+**Release Date:** 20-06-2014
+
+**Release Version:** 2.5
+
+**The following features have been pushed :**
+```
+New NokiaX enum added in push DeviceType.
+```
+
+**The following features have been pushed to the services :**
+
+**PUSH SERVICE**
+
+```
+updatePushBadgeforDevice
+updatePushBadgeforUser
+clearAllBadgeCount
+```
+
+
+**SCORE BOARD SERVICE SERVICE**
+
+```
+getUsersWithScoreRange
+```
+**This release contains the following bug fix:**
+
+```
+None
+```
 
 
 ## Version 2.4
