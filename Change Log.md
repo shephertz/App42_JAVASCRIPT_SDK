@@ -1,3 +1,4 @@
+* [Release Version 2.4](https://github.com/shephertz/App42_JAVASCRIPT_SDK/blob/master/Change%20Log.md#version-24)
 * [Release Version 2.3](https://github.com/shephertz/App42_JAVASCRIPT_SDK/blob/master/Change%20Log.md#version-23)
 * [Release Version 2.2](https://github.com/shephertz/App42_JAVASCRIPT_SDK/blob/master/Change%20Log.md#version-22)
 * [Release Version 2.1](https://github.com/shephertz/App42_JAVASCRIPT_SDK/blob/master/Change%20Log.md#version-21)
@@ -8,6 +9,64 @@
 * [Release Version 1.7](https://github.com/shephertz/App42_JAVASCRIPT_SDK/blob/master/Change%20Log.md#version-17)
 
 
+
+
+
+## Version 2.4
+
+**Release Date:** 01-04-2014
+
+**Release Version:** 2.4
+
+
+**The following features have been pushed  :**
+
+```
+If you are upgrading from previous version of App42-all-2.3.min and have used setQuery method on any service, you have to set App42.setDbName instead of passing it in method parameter.
+
+**OlD Code Snippet:
+setQuery("dbName","collectionName","query");
+
+**New Code Snippet :
+App42.setDbName("dbName");
+setQuery("collectionName","query");
+```
+
+**The following features have been pushed to the services :**
+
+**STORAGE SERVICE**
+
+```
+addOrUpdateKeys
+addAttachmentToDocs
+insertJSONDocumentWithFile
+```
+
+
+**REVIEW SERVICE**
+
+```
+getAllReviewsByUser
+```
+
+
+**USER SERVICE**
+
+```
+addJSONObject(Add Extra Information while creating user)
+```
+
+**SCOREBOARD SERVICE**
+
+```
+addJSONObject(Add Extra Information of user while saves score)
+```
+
+**This release contains the following bug fix:**
+
+```
+None
+```
 
 
 ## Version 2.3
