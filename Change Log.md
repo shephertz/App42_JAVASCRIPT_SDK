@@ -1,3 +1,4 @@
+* [Release Version 2.7](https://github.com/shephertz/App42_JAVASCRIPT_SDK/blob/master/Change%20Log.md#version-27)
 * [Release Version 2.6](https://github.com/shephertz/App42_JAVASCRIPT_SDK/blob/master/Change%20Log.md#version-26)
 * [Release Version 2.5](https://github.com/shephertz/App42_JAVASCRIPT_SDK/blob/master/Change%20Log.md#version-25)
 * [Release Version 2.4](https://github.com/shephertz/App42_JAVASCRIPT_SDK/blob/master/Change%20Log.md#version-24)
@@ -11,6 +12,51 @@
 * [Release Version 1.7](https://github.com/shephertz/App42_JAVASCRIPT_SDK/blob/master/Change%20Log.md#version-17)
 
 
+
+
+## Version 2.7
+
+**Release Date:** 20-08-2014
+
+**Release Version:** 2.7
+
+**The following features have been pushed :**
+```
+New NokiaX enum added in push DeviceType.
+```
+
+**The following features have been pushed to the services :**
+
+**PUSH SERVICE**
+
+```
+deleteChannel
+getChannelUsersCount
+getChannelUsers
+getUserSubscribedChannelsCount
+getUserSubscribedChannels
+```
+
+**STORAGE SERVICE**
+
+```
+setCreatedOn
+setUpdatedOn
+setDocumentId
+```
+
+**AVATAR SERVICE**
+
+```
+updateAvatar
+deleteAvatarByName
+deleteAllAvatars
+```
+**This release contains the following bug fix:**
+
+```
+None
+```
 
 ## Version 2.6
 
