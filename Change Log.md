@@ -1,3 +1,4 @@
+* [Release Version 2.7.1](https://github.com/shephertz/App42_JAVASCRIPT_SDK/blob/master/Change%20Log.md#version-271)
 * [Release Version 2.7](https://github.com/shephertz/App42_JAVASCRIPT_SDK/blob/master/Change%20Log.md#version-27)
 * [Release Version 2.6](https://github.com/shephertz/App42_JAVASCRIPT_SDK/blob/master/Change%20Log.md#version-26)
 * [Release Version 2.5](https://github.com/shephertz/App42_JAVASCRIPT_SDK/blob/master/Change%20Log.md#version-25)
@@ -12,6 +13,19 @@
 * [Release Version 1.7](https://github.com/shephertz/App42_JAVASCRIPT_SDK/blob/master/Change%20Log.md#version-17)
 
 
+
+## Version 2.7.1
+
+**Release Date:** 26-08-2014
+
+**Release Version:** 2.7.1
+
+
+**This release contains the following bug fix:**
+
+```
+Bug fix in storage service
+```
 
 
 ## Version 2.7
