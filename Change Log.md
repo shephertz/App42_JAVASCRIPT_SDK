@@ -1,3 +1,4 @@
+* [Release Version 2.8](https://github.com/shephertz/App42_JAVASCRIPT_SDK/blob/master/Change%20Log.md#version-28)
 * [Release Version 2.7.2](https://github.com/shephertz/App42_JAVASCRIPT_SDK/blob/master/Change%20Log.md#version-272)
 * [Release Version 2.7.1](https://github.com/shephertz/App42_JAVASCRIPT_SDK/blob/master/Change%20Log.md#version-271)
 * [Release Version 2.7](https://github.com/shephertz/App42_JAVASCRIPT_SDK/blob/master/Change%20Log.md#version-27)
@@ -14,6 +15,24 @@
 * [Release Version 1.7](https://github.com/shephertz/App42_JAVASCRIPT_SDK/blob/master/Change%20Log.md#version-17)
 
 
+
+## Version 2.8
+
+**Release Date:** 03-11-2014
+
+**Release Version:** 2.8
+
+**The following Service have been pushed :**
+
+```
+BravoBoard Service
+```
+
+**This release contains the following bug fix:**
+
+```
+None
+```
 
 ## Version 2.7.2
 
