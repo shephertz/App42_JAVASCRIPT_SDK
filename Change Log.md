@@ -26,7 +26,7 @@
 **Feature :** 
 
 ```
-App42 Javascript SDK now supports InApp Messaging.
+In-App Messaging
 ```
 
 **This release contains the following bug fix:**
